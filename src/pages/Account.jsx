@@ -43,9 +43,16 @@ const Account = () => {
                                             </div>
                                         </div>
                                     </div>
+
+
+                                </div>
+                                <div>
+                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px]">
+                                        USD live equity share value: $4444
+                                    </p>
                                 </div>
 
-                                <div className="flex w-full items-sart sm:mt-7 mt-3 shadow-xl">
+                                <div className="flex w-full items-sart sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[90%]">
                                         <div className="sm:w-[34.4%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">Oa Microsoft</h4>
@@ -64,10 +71,14 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <div>
+                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px]">
+                                        USD live equity share value: $4444
+                                    </p>
+                                </div>
 
 
-
-                                <div className="flex w-full items-strt sm:mt-7 mt-3 shadow-xl">
+                                <div className="flex w-full items-strt sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[90%]">
                                         <div className="sm:w-[34.4%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">AO IBM A<span className="text-[#8FC292]">mount</span></h4>
@@ -86,7 +97,11 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
-
+                                <div>
+                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px]">
+                                        USD live equity share value: $4444
+                                    </p>
+                                </div>
                                 <div className="mt-8">
                                     <button className="bg-[#31685B] text-white w-full sm:py-3 py-2.5 uppercase font-inter sm:text-lg text-sm text-center rounded-md">View all</button>
                                 </div>
@@ -106,8 +121,12 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="flex w-full items-start sm:mt-7 mt-3 shadow-xl">
+                                <div>
+                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px]">
+                                        USD live equity share value: $4444
+                                    </p>
+                                </div>
+                                <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[100%]">
                                         <div className="sm:w-[34.4%] w-[40%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">ICP <br /> A<span className="text-[#8FC292]">mount</span></h4>
@@ -119,10 +138,14 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <div>
+                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px]">
+                                        USD live equity share value: $4444
+                                    </p>
+                                </div>
 
 
-
-                                <div className="flex w-full items-start sm:mt-7 mt-3 shadow-xl">
+                                <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[100%]">
                                         <div className="sm:w-[34.4%] w-[40%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">Bitcoin A<span className="text-[#8FC292]">mount</span></h4>
@@ -134,7 +157,11 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
-
+                                <div>
+                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px]">
+                                        USD live equity share value: $4444
+                                    </p>
+                                </div>
                                 <div className="mt-8">
                                     <button className="bg-[#31685B] text-white w-full py-3 uppercase font-inter text-lg text-center rounded-md">View all</button>
                                 </div>

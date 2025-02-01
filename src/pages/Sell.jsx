@@ -9,18 +9,37 @@ const Sell = () => {
     const [selectedCurrency, setSelectedCurrency] = useState('OPEN APP');
     const [displayEquity, setDisplayEquity] = useState(selectedEquity);
     const [displayCurrency, setDisplayCurrency] = useState(selectedCurrency);
-    const [amount] = useState('1,000');
+    const [amount, setAmount] = useState('1000'); // Changed to include setter function
+    const [equityOptions, setEquityOptions] = useState(['OA Tesla', 'OA Apple', 'OA Amazon', 'OA Google']);
+    const [currencyOptions, setCurrencyOptions] = useState(['OPEN APP', 'Bitcoin', 'Ethereum', 'USD Coin']);
 
     const equitySelectRef = useRef(null);
     const currencySelectRef = useRef(null);
 
-    const equityOptions = ['OA Tesla', 'OA Apple', 'OA Amazon', 'OA Google'];
-    const currencyOptions = ['OPEN APP', 'Bitcoin', 'Ethereum', 'USD Coin'];
-
     const handleSwap = () => {
-        const temp = displayEquity;
-        setDisplayEquity(displayCurrency);
-        setDisplayCurrency(temp);
+        // Swap displayed values
+        const newDisplayEquity = displayCurrency;
+        const newDisplayCurrency = displayEquity;
+        setDisplayEquity(newDisplayEquity);
+        setDisplayCurrency(newDisplayCurrency);
+
+        // Swap selected values
+        const newSelectedEquity = selectedCurrency;
+        const newSelectedCurrency = selectedEquity;
+        setSelectedEquity(newSelectedEquity);
+        setSelectedCurrency(newSelectedCurrency);
+
+        // Swap options arrays
+        const newEquityOptions = currencyOptions;
+        const newCurrencyOptions = equityOptions;
+        setEquityOptions(newEquityOptions);
+        setCurrencyOptions(newCurrencyOptions);
+    };
+
+    const handleAmountChange = (e) => {
+        // Allow only numbers and limit to 7 characters
+        const value = e.target.value.replace(/\D/g, '').slice(0, 7);
+        setAmount(value);
     };
 
     const handleSelectBoxClick = (type) => {
@@ -46,7 +65,7 @@ const Sell = () => {
                         </div>
                         <div className="pl-4">
                             <h3 className="font-inter py-3 sm:text-3xl text-base font-bold leading-none uppercase text-[#8ABD90]"> 
-                                <span className="text-[#15413F]">S</span>ell <br /> 
+                                <span className="text-[#15413F]">B</span>uy <br /> 
                                 <span className="text-[#15413F]">S</span>hares
                             </h3>
                         </div>
@@ -65,14 +84,20 @@ const Sell = () => {
                                             A<span className="text-[#8FC292]">mount</span>
                                         </h4>
                                     </div>
-                                    <div className="rounded-r-md w-full border-2 sm:border-l-0  border-[#103532]">
+                                    <div className="rounded-r-md w-full border-2 sm:border-l-0 border-[#103532]">
                                         <div className="flex items-center justify-center h-full py-2">
-                                            <h4 className="font-inter text-[18px] font-bold text-[#204E4B]">
-                                                ${amount}
-                                            </h4>
+                                            <input 
+                                                type="text" 
+                                                className="font-inter text-center focus:outline-none text-[18px] font-bold text-[#204E4B] w-full"
+                                                value={new Intl.NumberFormat().format(amount)} 
+                                                onChange={handleAmountChange}
+                                                placeholder="Enter amount"
+                                            />
                                         </div>
                                     </div>
                                 </div>
+
+                                {/* Rest of the code remains the same as before */}
 
                                 {/* Equity Selection */}
                                 <div className="w-full mt-7">
@@ -187,7 +212,7 @@ const Sell = () => {
                                                         {displayEquity}
                                                     </h4>
                                                     <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                                                        Total {displayEquity.split(' ')[1]}: 2.5
+                                                        Total {displayEquity.split(' ')[1] || displayEquity}: 2.5
                                                     </p>
                                                 </div>
                                                 <div className="sm:w-[33%] text-center my-4">

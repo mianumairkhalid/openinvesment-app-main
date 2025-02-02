@@ -114,7 +114,7 @@ const Sell = () => {
                                             className="rounded-r-md select-box-div w-full b sm:border-l-0 border-2 border-[#103532] relative cursor-pointer"
                                             onClick={() => handleSelectBoxClick('equity')}
                                         >
-                                            <div className="flex items-center px-3 py-2 min-h-full">
+                                            <div className="flex items-center px-3 sm:py-2 py-3 min-h-full">
                                                 <div className="w-[7%] sm:block hidden">
                                                     <img src={email} className="" alt="equity" />
                                                 </div>
@@ -165,7 +165,7 @@ const Sell = () => {
                                             className="rounded-r-md select-box-div w-full border-2 sm:border-l-0  border-[#103532] cursor-pointer"
                                             onClick={() => handleSelectBoxClick('currency')}
                                         >
-                                            <div className="flex items-center px-3 py-2 min-h-full">
+                                            <div className="flex items-center px-3 sm:py-2 py-3 min-h-full">
                                                 <div className="sm:w-[7%] sm:block hidden">
                                                     <img src={email} className="" alt="currency" />
                                                 </div>

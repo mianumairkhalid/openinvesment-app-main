@@ -148,7 +148,7 @@ const Account = () => {
                                 <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[100%]">
                                         <div className="sm:w-[34.4%] w-[40%] border-[2px] border-r-0 border-[#15413F] p-3">
-                                            <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">Bitcoin A<span className="text-[#8FC292]">mount</span></h4>
+                                            <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">CK BITCOIN A<span className="text-[#8FC292]">mount</span></h4>
                                         </div>
                                         <div className="w-full border-[2px] border-[#15413F] ">
                                             <div className="flex items-center min-h-full justify-center">

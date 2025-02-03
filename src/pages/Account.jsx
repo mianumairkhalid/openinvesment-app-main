@@ -11,7 +11,7 @@ const Account = () => {
 
 
             <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#123a38] to-[#86ba8e]">
-                <div className="sm:w-[85%] w-[95%] sm:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
+                <div className="xl:w-[85%] w-[95%] xl:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
                     <div className="flex items-center border-b-[2.5px] border-[#15413F]">
                         <div className="sm:w-[20%] w-[35%] sm:px-0 px-3 py-5 border-r-[2.5px] border-[#15413F] flex justify-center items-center ">
                             <img src={logo} className="sm:w-[50%] w-[80%]" alt="" />
@@ -21,7 +21,7 @@ const Account = () => {
                             <Link to={'/action-pro-mode'} className="bg-[#31685B] text-white sm:w-44 w-28 sm:py-3 py-2.5 uppercase font-inter sm:text-lg text-sm text-center rounded-md">Pro Mode</Link>
                         </div>
                     </div>
-                    <div className="sm:px-16">
+                    <div className="xl:px-16 sm:px-4">
                         <div className="flex sm:flex-row flex-col justify-between">
                             <div className="sm:w-[50%] sm:py-10 py-5 sm:px-5 px-2 border-r-[2px] border-[#15413F]">
                                 <h3 className="text-[#296A5B] sm:text-lg text-sm leading-none mb-3 font-bold">Total Equity Shares Holding : $ 256,000</h3>
@@ -37,7 +37,7 @@ const Account = () => {
                                         </div>
                                     </div>
                                     <div className="w-[15%]">
-                                        <div className="flex items-center sm:min-h-[63.3px] min-h-full border-l-0 border-[2px] border-[#15413F]">
+                                        <div className="flex items-center xl:min-h-[63.3px] min-h-full border-l-0 border-[2px] border-[#15413F]">
                                             <div className="w-full">
                                                 <h4 className="font-inter text-center sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">+30%</h4>
                                             </div>

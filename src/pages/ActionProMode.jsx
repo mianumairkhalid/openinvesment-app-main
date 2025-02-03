@@ -179,7 +179,7 @@ const ActionProMode = () => {
                                     </div>
 
                                     <div className="mt-5 flex justify-end">
-                                        <Link to={'/transaction-history'} className="bg-[#31685B] text-white sm:w-[40%] w-full py-3 uppercase font-inter sm:text-lg text-sm text-center rounded-md hover:bg-[#25544a] transition-colors">
+                                        <Link to={'/transaction-history'} className="bg-[#31685B] text-white sm:w-[40%] w-full py-3 uppercase font-inter xl:text-lg text-sm text-center rounded-md hover:bg-[#25544a] transition-colors">
                                             View Transaction History
                                         </Link>
                                     </div>

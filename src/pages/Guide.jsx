@@ -17,7 +17,7 @@ const Guide = () => {
         <>
             <Navbar />
             <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#123a38] to-[#86ba8e]">
-                <div className="sm:w-[85%] w-[95%] sm:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
+                <div className="sm:w-[85%] w-[95%] xl:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
                     <div className="flex items-center border-b-[2.5px] border-[#15413F]">
                         <div className="sm:w-[20%] w-[35%] sm:px-0 px-3 py-5 border-r-[2.5px] border-[#15413F] flex justify-center items-center ">
                             <img src={logo} className="sm:w-[50%] w-[80%]" alt="" />
@@ -28,11 +28,11 @@ const Guide = () => {
                     </div>
 
                     <div className="sm:p-8 p-4">
-                        <div className="grid sm:grid-cols-3 grid-cols-1 sm:gap-8 gap-5">
+                        <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-5">
 
                             <div className="border-[1.5px] border-[#15413F]  shadow-2xl rounded-2xl bg-white">
                                 <div className="sm:py-5 py-3 flex justify-center items-center border-b-[1.5px] border-[#15413F]">
-                                    <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F]">Listed Exchanges</h3>
+                                    <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F] xl:text-left text-center">Listed Exchanges</h3>
                                 </div>
                                 <div className="sm:px-10  px-5 sm:py-8 py-4 space-y-3 rounded-xl sm:min-h-[280px] min-h-[200px]">
                                     <div className="flex items-center gap-5">
@@ -54,7 +54,7 @@ const Guide = () => {
 
                             <div className="border-[1.5px] border-[#15413F]  shadow-2xl rounded-2xl bg-white">
                                 <div className="sm:py-5 py-3 flex justify-center items-center border-b-[1.5px] border-[#15413F]">
-                                    <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F]">Listed Exchanges</h3>
+                                    <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F] xl:text-left text-center">Listed Exchanges</h3>
                                 </div>
                                 <div className="sm:px-10  px-5 sm:py-8 py-4 space-y-3 rounded-xl sm:min-h-[280px] min-h-[200px]">
                                     <div className="flex items-center gap-5">
@@ -78,7 +78,7 @@ const Guide = () => {
                             <div className="flex sm:gap-5 sm:justify-start justify-between">
                                 <div className="border-[1.5px] border-[#15413F] shadow-lg rounded-lg bg-white">
                                     <div className="sm:py-5 py-3 flex justify-center items-center border-b-[1.5px] border-[#15413F]">
-                                        <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F]">PDF</h3>
+                                        <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F] xl:text-left text-center">PDF</h3>
                                     </div>
                                     <div className="px-4 py-8 space-y-3 min-h-[280px]">
                                         <div className="flex items-center gap-3">
@@ -104,7 +104,7 @@ const Guide = () => {
                                 </div>
                                 <div className="sm:w-[40%] w-[35%] border-[1.5px] border-[#15413F] shadow-lg rounded-lg bg-white">
                                     <div className="sm:py-5 py-3 flex justify-center items-center border-b-[1.5px] border-[#15413F]">
-                                        <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F]">Social</h3>
+                                        <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F] xl:text-left text-center">Social</h3>
                                     </div>
                                     <div className="px-5 py-8 flex items-center flex-col w-full space-y-3 rounded-xl min-h-[280px]">
                                         <div className="flex items-center gap-5">

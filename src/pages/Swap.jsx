@@ -58,19 +58,19 @@ const Swap = () => {
         <>
             <Navbar />
             <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#123a38] to-[#86ba8e]">
-                <div className="sm:w-[40%] w-[95%] sm:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
+                <div className="xl:w-[40%] xl:mt-0 lg:mt-7 md:w-[70%] w-[95%] sm:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
                     <div className="flex border-b-[2.5px] border-[#103532]">
                         <div className="sm:w-[20%] w-[35%] sm:px-0 px-3 py-5 border-r-[2.5px] border-[#103532] flex justify-center items-center">
                             <img src={logo} className="sm:w-[50%] w-[80%]" alt="logo" />
                         </div>
                         <div className="pl-4">
-                            <h3 className="font-inter py-3 sm:text-3xl text-base font-bold leading-none uppercase text-[#8ABD90]"> 
-                                <span className="text-[#15413F]">B</span>uy <br /> 
+                            <h3 className="font-inter py-3 sm:text-3xl text-base font-bold leading-none uppercase text-[#8ABD90]">
+                                <span className="text-[#15413F]">B</span>uy <br />
                                 <span className="text-[#15413F]">S</span>hares
                             </h3>
                         </div>
                     </div>
-                    
+
                     <div className="p-8">
                         <div className="w-full flex items-start">
                             <div className="w-full">
@@ -86,10 +86,10 @@ const Swap = () => {
                                     </div>
                                     <div className="rounded-r-md w-full border-2 sm:border-l-0 border-[#103532]">
                                         <div className="flex items-center justify-center h-full py-2">
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 className="font-inter text-center focus:outline-none text-[18px] font-bold text-[#204E4B] w-full"
-                                                value={new Intl.NumberFormat().format(amount)} 
+                                                value={new Intl.NumberFormat().format(amount)}
                                                 onChange={handleAmountChange}
                                                 placeholder="Enter amount"
                                             />
@@ -110,7 +110,7 @@ const Swap = () => {
                                                 S<span className="text-[#8FC292]">hares</span>
                                             </h4>
                                         </div>
-                                        <div 
+                                        <div
                                             className="rounded-r-md select-box-div w-full b sm:border-l-0 border-2 border-[#103532] relative cursor-pointer"
                                             onClick={() => handleSelectBoxClick('equity')}
                                         >
@@ -130,8 +130,8 @@ const Swap = () => {
                                                         className={selectStyle}
                                                     >
                                                         {equityOptions.map(option => (
-                                                            <option 
-                                                                key={option} 
+                                                            <option
+                                                                key={option}
                                                                 value={option}
                                                                 className="font-inter text-[16px] font-semibold text-[#204E4B] hover:bg-[#8FC292]"
                                                             >
@@ -161,7 +161,7 @@ const Swap = () => {
                                                 C<span className="text-[#8FC292]">urrency</span>
                                             </h4>
                                         </div>
-                                        <div 
+                                        <div
                                             className="rounded-r-md select-box-div w-full border-2 sm:border-l-0  border-[#103532] cursor-pointer"
                                             onClick={() => handleSelectBoxClick('currency')}
                                         >
@@ -181,8 +181,8 @@ const Swap = () => {
                                                         className={selectStyle}
                                                     >
                                                         {currencyOptions.map(option => (
-                                                            <option 
-                                                                key={option} 
+                                                            <option
+                                                                key={option}
                                                                 value={option}
                                                                 className="font-inter text-[16px] font-semibold text-[#204E4B] hover:bg-[#8FC292]"
                                                             >
@@ -216,7 +216,7 @@ const Swap = () => {
                                                     </p>
                                                 </div>
                                                 <div className="sm:w-[33%] text-center my-4">
-                                                    <button 
+                                                    <button
                                                         onClick={handleSwap}
                                                         className="hover:scale-110 transition-transform duration-300"
                                                     >
@@ -235,7 +235,7 @@ const Swap = () => {
 
                                             <div className="mt-10">
                                                 <button className="bg-[#31685B] hover:bg-[#25544a] text-white w-full py-3 uppercase font-inter text-lg text-center rounded-md transition-colors duration-300">
-                                                Swap
+                                                    Swap
                                                 </button>
                                             </div>
                                         </div>

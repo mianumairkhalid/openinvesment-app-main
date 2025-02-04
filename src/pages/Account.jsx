@@ -47,8 +47,8 @@ const Account = () => {
 
                                 </div>
                                 <div>
-                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px]">
-                                        USD live equity share value: $4444
+                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px] uppercase">
+                                        Total USD live equity share value: $4444
                                     </p>
                                 </div>
 
@@ -72,8 +72,8 @@ const Account = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px]">
-                                        USD live equity share value: $4444
+                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px] uppercase">
+                                        Total USD live equity share value: $4444
                                     </p>
                                 </div>
 
@@ -98,8 +98,8 @@ const Account = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px]">
-                                        USD live equity share value: $4444
+                                    <p className="text-center ml-[10%] mt-1 font-bold text-[#528067] text-[9px] uppercase">
+                                        Total USD live equity share value: $4444
                                     </p>
                                 </div>
                                 <div className="mt-8">
@@ -122,8 +122,8 @@ const Account = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px]">
-                                        USD live equity share value: $4444
+                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px] uppercase">
+                                    Total USD live digital value: $100, 000
                                     </p>
                                 </div>
                                 <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
@@ -139,8 +139,8 @@ const Account = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px]">
-                                        USD live equity share value: $4444
+                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px] uppercase">
+                                    Total USD live digital value: $100, 000
                                     </p>
                                 </div>
 
@@ -158,8 +158,8 @@ const Account = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px]">
-                                        USD live equity share value: $4444
+                                    <p className="text-center ml-[27%] mt-1 font-bold text-[#528067] text-[9px] uppercase">
+                                        Total USD live digital value: $100, 000
                                     </p>
                                 </div>
                                 <div className="mt-8">

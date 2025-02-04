@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from "../components/Navbar";
 import logo from "../asset/logo.svg";
 import email from "../asset/email.png";
@@ -6,39 +6,62 @@ import { Link } from "react-router-dom";
 
 const ActionProMode = () => {
     const [selectedShare, setSelectedShare] = useState('OA_Tesla');
+    const [currentTime, setCurrentTime] = useState(new Date());
     
-    const sharesData = {
+    const [sharesData, setSharesData] = useState({
         OA_Tesla: {
-            buyUnits: 4.2,
-            buyPrice: 402,
-            initialInvestment: 16800,
-            closeUnits: 2.8,
-            totalValue: 16800,
-            percentage: "+30%",
-            timestamp: "(D/M/Y) (TIME STAMP)"
+            buyUnits: 0,
+            buyPrice: 0,
+            initialInvestment: 0,
+            closeUnits: 0,
+            totalValue: 0,
+            percentage: "0%",
         },
         OA_Apple: {
-            buyUnits: 5.0,
-            buyPrice: 185,
-            initialInvestment: 9250,
-            closeUnits: 3.5,
-            totalValue: 9250,
-            percentage: "+25%",
-            timestamp: "(D/M/Y) (TIME STAMP)"
+            buyUnits: 0,
+            buyPrice: 0,
+            initialInvestment: 0,
+            closeUnits: 0,
+            totalValue: 0,
+            percentage: "0%",
         },
         OA_Amazon: {
-            buyUnits: 3.8,
-            buyPrice: 3300,
-            initialInvestment: 12540,
-            closeUnits: 2.2,
-            totalValue: 12540,
-            percentage: "+18%",
-            timestamp: "(D/M/Y) (TIME STAMP)"
+            buyUnits: 0,
+            buyPrice: 0,
+            initialInvestment: 0,
+            closeUnits: 0,
+            totalValue: 0,
+            percentage: "0%",
         }
-    };
+    });
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentTime(new Date());
+        }, 1000);
+        return () => clearInterval(timer);
+    }, []);
 
     const handleShareChange = (e) => {
         setSelectedShare(e.target.value);
+    };
+
+    const handleInputChange = (field, value) => {
+        setSharesData(prev => ({
+            ...prev,
+            [selectedShare]: {
+                ...prev[selectedShare],
+                [field]: value
+            }
+        }));
+    };
+
+    const formatTimestamp = (date) => {
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        const time = date.toLocaleTimeString();
+        return `(${day}/${month}/${year}) (${time})`;
     };
 
     const currentData = sharesData[selectedShare];
@@ -66,7 +89,7 @@ const ActionProMode = () => {
                                     <select 
                                         value={selectedShare}
                                         onChange={handleShareChange}
-                                        className="appearance-none font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] bg-transparent outline-none cursor-pointer rounded-lg px-2 transition-colors w-full"
+                                        className="appearance-none font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] bg-transparent outline-none font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B] cursor-pointer rounded-lg px-2 transition-colors w-full"
                                     >
                                         <option value="OA_Tesla">OA Tesla Buy</option>
                                         <option value="OA_Apple">OA Apple Buy</option>
@@ -80,19 +103,27 @@ const ActionProMode = () => {
                                     <div className="flex w-full items-start">
                                         <div className="flex sm:w-[90%] w-[70%] min-h-[53.5px]">
                                             <div className="w-full border-[2px] border-[#15413F] ">
-                                                <div className="flex items-center min-h-full justify-center">
-                                                    <h4 className="font-inter sm:text-[18px] text-[12px] leading-none font-bold text-[#204E4B]">
-                                                        {currentData.buyUnits} Units
-                                                    </h4>
+                                                <div className="flex gap-2 items-center min-h-full justify-center">
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.buyUnits}
+                                                        onChange={(e) => handleInputChange('buyUnits', e.target.value)}
+                                                        className="w-10 appearance-none text-right bg-transparent font-inter sm:text-[18px] text-[12px] outline-none text-sm leading-none font-bold uppercase text-[#204E4B]"
+                                                        step="0.1"
+                                                    />
+                                                    <span className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]"> Units</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="sm:w-[10%] w-[30%]">
                                             <div className="flex justify-center min-h-[53.5px] items-center border-l-0 border-[2px] border-[#15413F]">
                                                 <div className="w-[50%]">
-                                                    <h4 className="font-inter text-center sm:text-[18px] text-[12px] leading-none font-bold uppercase text-[#204E4B]">
-                                                        {currentData.percentage}
-                                                    </h4>
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.percentage}
+                                                        onChange={(e) => handleInputChange('percentage', e.target.value)}
+                                                        className="w-10 appearance-none text-center bg-transparent font-inter sm:text-[18px] text-[12px] outline-none text-sm leading-none font-bold uppercase text-[#204E4B]"
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
@@ -107,10 +138,23 @@ const ActionProMode = () => {
                                                 </h4>
                                             </div>
                                             <div className="w-full border-[2px] border-t-0 border-[#15413F] ">
-                                                <div className="flex items-center min-h-full justify-center">
-                                                    <h4 className="font-inter sm:text-[18px] text-[12px] sm:px-0 px-2 text-center leading-none font-bold text-[#204E4B]">
-                                                        {currentData.buyUnits} Units @ ${currentData.buyPrice} per Share {currentData.timestamp}
-                                                    </h4>
+                                                <div className="flex items-center min-h-full justify-center gap-1 sm:text-[18px] text-[12px]">
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.buyUnits}
+                                                        onChange={(e) => handleInputChange('buyUnits', e.target.value)}
+                                                        className="w-10 text-center bg-transparent outline-none font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]"
+                                                        step="0.1"
+                                                    />
+                                                    <span className='font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]'>Units @ $</span>
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.buyPrice}
+                                                        onChange={(e) => handleInputChange('buyPrice', e.target.value)}
+                                                        className="w-6 text-left bg-transparent outline-none font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]"
+                                                        step="0.1"
+                                                    />
+                                                    <span className='font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]'>per Share {formatTimestamp(currentTime)}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,9 +170,13 @@ const ActionProMode = () => {
                                             </div>
                                             <div className="w-full border-[2px] border-t-0 border-[#15413F] ">
                                                 <div className="flex items-center min-h-full justify-center">
-                                                    <h4 className="font-inter sm:text-[18px] text-[12px] leading-none font-bold text-[#204E4B]">
-                                                        ${currentData.initialInvestment.toLocaleString()}
-                                                    </h4>
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.initialInvestment}
+                                                        onChange={(e) => handleInputChange('initialInvestment', e.target.value)}
+                                                        className="w-full text-center bg-transparent outline-none font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B] font-inter sm:text-[18px] text-[12px]"
+                                                        step="0.1"
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
@@ -143,18 +191,26 @@ const ActionProMode = () => {
                                             </div>
                                             <div className="w-full border-[2px] border-t-0 border-[#15413F] ">
                                                 <div className="flex items-center min-h-full justify-center">
-                                                    <h4 className="font-inter sm:text-[18px] text-[12px] sm:px-0 px-2 text-center leading-none font-bold text-[#204E4B]">
-                                                        {currentData.closeUnits} Units {currentData.timestamp}
-                                                    </h4>
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.closeUnits}
+                                                        onChange={(e) => handleInputChange('closeUnits', e.target.value)}
+                                                        className="w-10 text-center bg-transparent outline-none font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B] font-inter sm:text-[18px] text-[12px]"
+                                                        step="0.1"
+                                                    />
+                                                    <span className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]"> Units {formatTimestamp(currentTime)}</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="sm:w-[10%] w-[30%]">
                                             <div className="flex items-center sm:min-h-[44px] min-h-full border-b-[2px] border-r-[2px] border-[#15413F]">
                                                 <div className="w-full">
-                                                    <h4 className="font-inter text-center sm:text-[18px] text-[12px] leading-none font-bold uppercase text-[#204E4B]">
-                                                        {currentData.percentage}
-                                                    </h4>
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.percentage}
+                                                        onChange={(e) => handleInputChange('percentage', e.target.value)}
+                                                        className="w-full text-center bg-transparent outline-none font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B] text-[12px]"
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
@@ -170,9 +226,13 @@ const ActionProMode = () => {
                                             </div>
                                             <div className="w-full border-[2px] border-t-0 border-[#15413F] ">
                                                 <div className="flex items-center min-h-full justify-center">
-                                                    <h4 className="font-inter sm:text-[18px] sm:px-0 px-2 sm:py-0 py-1 text-center text-sm leading-none font-bold text-[#204E4B]">
-                                                        {currentData.buyUnits} Units @ ${currentData.buyPrice} per Share {currentData.timestamp}
-                                                    </h4>
+                                                    <input
+                                                        type="text"
+                                                        value={currentData.totalValue}
+                                                        onChange={(e) => handleInputChange('totalValue', e.target.value)}
+                                                        className="w-full text-center bg-transparent outline-none text-sm leading-none font-bold uppercase text-[#204E4B] font-inter sm:text-[18px] text-[12px]"
+                                                        step="0.1"
+                                                    />
                                                 </div>
                                             </div>
                                         </div>

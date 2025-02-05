@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from "../components/Navbar";
 import logo from "../asset/logo.svg";
 import email from "../asset/email.png";
 
 const TransactionHistory = () => {
   const [selectedShare, setSelectedShare] = useState('OA_Tesla');
-  
+  const [isShareDropdownOpen, setIsShareDropdownOpen] = useState(false);
   const sharesData = {
     OA_Tesla: {
       totalUnits: 5.8,
@@ -35,13 +35,17 @@ const TransactionHistory = () => {
       ]
     }
   };
-
-  const handleShareChange = (e) => {
-    setSelectedShare(e.target.value);
-  };
-
+  const shareDropdownRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (shareDropdownRef.current && !shareDropdownRef.current.contains(event.target)) {
+        setIsShareDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   const currentData = sharesData[selectedShare];
-
   return (
     <>
       <Navbar />
@@ -60,19 +64,22 @@ const TransactionHistory = () => {
           </div>
           <div className="sm:p-8 p-2">
             <div className="w-full flex sm:flex-row flex-col items-start">
-              <div className="sm:w-[20%] w-full sm:shadow-lg border-[2px] sm:border-r-0 border-[#15413F] flex justify-between p-3">
+              <div ref={shareDropdownRef} className="sm:w-[20%] w-full sm:shadow-lg border-[2px] sm:border-r-0 border-[#15413F] flex justify-between p-3 relative">
                 <div className="flex justify-between items-center gap-2 w-full">
-                  <select 
-                    value={selectedShare}
-                    onChange={handleShareChange}
-                    className="appearance-none font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] bg-transparent outline-none cursor-pointer rounded-lg px-2 transition-colors w-full"
-                  >
-                    <option value="OA_Tesla">OA Tesla Buy</option>
-                    <option value="OA_Apple">OA Apple Buy</option>
-                    <option value="OA_Amazon">OA Amazon Buy</option>
-                  </select>
-                  <img src={email} className="sm:w-[15%] w-[10%]" alt="share-icon" />
+                  <div className="appearance-none font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] bg-transparent cursor-pointer rounded-lg px-2 transition-colors w-full">
+                    {selectedShare === "OA_Tesla" && "OA Tesla Buy"}
+                    {selectedShare === "OA_Apple" && "OA Apple Buy"}
+                    {selectedShare === "OA_Amazon" && "OA Amazon Buy"}
+                  </div>
+                  <img onClick={() => setIsShareDropdownOpen(!isShareDropdownOpen)} src={email} className={`sm:w-[15%] w-[10%] cursor-pointer transition-transform duration-300 ${isShareDropdownOpen ? "rotate-180" : ""}`} alt="share-icon" />
                 </div>
+                {isShareDropdownOpen && (
+                  <ul className="absolute top-full left-0 z-10 w-[99%] bg-white border border-[#15413F] mt-1 rounded-md">
+                    <li onClick={() => { setSelectedShare("OA_Tesla"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Tesla Buy</li>
+                    <li onClick={() => { setSelectedShare("OA_Apple"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Apple Buy</li>
+                    <li onClick={() => { setSelectedShare("OA_Amazon"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Amazon Buy</li>
+                  </ul>
+                )}
               </div>
               <div className="w-full">
                 <div className="border-[2px] sm:border-t-[2px] border-t-0 border-[#15413F] flex">
@@ -91,7 +98,7 @@ const TransactionHistory = () => {
                   {currentData.transactions.map((transaction, index) => (
                     <div key={index} className="flex sm:flex-row flex-col w-full items-start">
                       <div className="flex sm:w-[70%] w-full sm:shadow-lg">
-                      <div className={`border-[2px] border-r-0 ${index === 0 ? 'border-t-0' : ''} border-[#15413F] p-3`}>
+                        <div className={`border-[2px] border-r-0 ${index === 0 ? 'border-t-0' : ''} border-[#15413F] p-3`}>
                           <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
                             {selectedShare.split('_')[1]} <span className="text-[#8FC292]">Close</span>
                           </h4>
@@ -105,11 +112,10 @@ const TransactionHistory = () => {
                         </div>
                       </div>
                       <div className="sm:w-[30%] w-full shadow-lg">
-                        <div className={`flex items-center sm:${index !== 0 ? 'border-t-[2px]' : ''} border-r-[2px] border-[#15413F]`}>
+                        <div className={`flex items-center ${index !== 0 ? 'border-t-[2px]' : ''} border-r-[2px] border-[#15413F]`}>
                           <div className="border-r-[2px] sm:border-l-0 border-l-[2px] border-[#15413F] p-3">
                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
-                              {selectedShare.split('_')[1]} <span className="text-[#8FC292]">Profit</span> &amp; L
-                              <span className="text-[#8FC292]">oss</span>
+                              {selectedShare.split('_')[1]} <span className="text-[#8FC292]">Profit</span> &amp; L<span className="text-[#8FC292]">oss</span>
                             </h4>
                           </div>
                           <div className="w-[50%]">

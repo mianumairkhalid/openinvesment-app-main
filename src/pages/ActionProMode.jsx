@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from "../components/Navbar";
 import logo from "../asset/logo.svg";
-import email from "../asset/email.png";
+import dropdown from "../asset/email.png";
 import { Link } from "react-router-dom";
 
 const ActionProMode = () => {
     const [selectedShare, setSelectedShare] = useState('OA_Tesla');
+    const [isShareDropdownOpen, setIsShareDropdownOpen] = useState(false);
     const [currentTime, setCurrentTime] = useState(new Date());
-    
     const [sharesData, setSharesData] = useState({
         OA_Tesla: {
             buyUnits: 0,
@@ -34,18 +34,25 @@ const ActionProMode = () => {
             percentage: "0%",
         }
     });
-
+    const shareDropdownRef = useRef(null);
+    
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentTime(new Date());
         }, 1000);
         return () => clearInterval(timer);
     }, []);
-
-    const handleShareChange = (e) => {
-        setSelectedShare(e.target.value);
-    };
-
+    
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (shareDropdownRef.current && !shareDropdownRef.current.contains(event.target)) {
+                setIsShareDropdownOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+    
     const handleInputChange = (field, value) => {
         setSharesData(prev => ({
             ...prev,
@@ -55,7 +62,7 @@ const ActionProMode = () => {
             }
         }));
     };
-
+    
     const formatTimestamp = (date) => {
         const day = date.getDate();
         const month = date.getMonth() + 1;
@@ -63,9 +70,9 @@ const ActionProMode = () => {
         const time = date.toLocaleTimeString();
         return `(${day}/${month}/${year}) (${time})`;
     };
-
+    
     const currentData = sharesData[selectedShare];
-
+    
     return (
         <>
             <Navbar />
@@ -84,19 +91,22 @@ const ActionProMode = () => {
                     </div>
                     <div className="p-8">
                         <div className="dropdown-box w-full flex sm:flex-row flex-col items-start">
-                            <div className="sm:w-[20%] w-full sm:shadow-lg sm:border-b-[2px] border-b-0 border-[2px] sm:border-r-0 border-[#15413F] flex justify-between p-3 ">
+                            <div ref={shareDropdownRef} className="sm:w-[20%] w-full relative sm:shadow-lg sm:border-b-[2px] border-b-0 border-[2px] sm:border-r-0 border-[#15413F] flex justify-between p-3">
                                 <div className="flex justify-between items-center gap-1 w-full">
-                                    <select 
-                                        value={selectedShare}
-                                        onChange={handleShareChange}
-                                        className="appearance-none font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] bg-transparent outline-none font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B] cursor-pointer rounded-lg px-2 transition-colors w-full"
-                                    >
-                                        <option value="OA_Tesla">OA Tesla Buy</option>
-                                        <option value="OA_Apple">OA Apple Buy</option>
-                                        <option value="OA_Amazon">OA Amazon Buy</option>
-                                    </select>
-                                    <img src={email} className="sm:w-[15%] w-[10%]" alt="share-icon" />
+                                    <div className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B] bg-transparent rounded-lg px-2 transition-colors w-full">
+                                        {selectedShare === "OA_Tesla" && "OA Tesla Buy"}
+                                        {selectedShare === "OA_Apple" && "OA Apple Buy"}
+                                        {selectedShare === "OA_Amazon" && "OA Amazon Buy"}
+                                    </div>
+                                    <img onClick={() => setIsShareDropdownOpen(!isShareDropdownOpen)} src={dropdown} className={`sm:w-[15%] w-[10%] cursor-pointer transition-transform duration-300 ${isShareDropdownOpen ? "rotate-180" : ""}`} alt="share-icon" />
                                 </div>
+                                {isShareDropdownOpen && (
+                                    <ul className="absolute top-full w-[99%] left-0 z-10 bg-white border border-[#15413F] mr-4 mt-1 rounded-md">
+                                        <li onClick={() => { setSelectedShare("OA_Tesla"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Tesla Buy</li>
+                                        <li onClick={() => { setSelectedShare("OA_Apple"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Apple Buy</li>
+                                        <li onClick={() => { setSelectedShare("OA_Amazon"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Amazon Buy</li>
+                                    </ul>
+                                )}
                             </div>
                             <div className="w-full">
                                 <div className="">
@@ -128,7 +138,6 @@ const ActionProMode = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="flex w-full items-start">
                                         <div className="flex w-full">
                                             <div className="sm:w-[30%] w-[50%] border-[2px] border-r-0 border-t-0 border-[#15413F] sm:p-3 p-1">
@@ -159,7 +168,6 @@ const ActionProMode = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="flex w-full items-start">
                                         <div className="flex w-full">
                                             <div className="sm:w-[30%] w-[50%] border-[2px] border-r-0 border-t-0 border-[#15413F] sm:p-3 p-1">
@@ -181,7 +189,6 @@ const ActionProMode = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="flex w-full sm:items-start">
                                         <div className="flex sm:w-[90%] w-[70%]">
                                             <div className="w-[34.4%] border-[2px] border-r-0 border-t-0 border-[#15413F] p-3">
@@ -215,7 +222,6 @@ const ActionProMode = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="flex w-full items-start">
                                         <div className="flex w-full">
                                             <div className="sm:w-[30%] w-[50%] border-[2px] border-r-0 border-t-0 border-[#15413F] sm:p-3 p-1">
@@ -237,7 +243,6 @@ const ActionProMode = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="mt-5 flex justify-end">
                                         <Link to={'/transaction-history'} className="bg-[#31685B] text-white sm:w-[40%] w-full py-3 uppercase font-inter xl:text-lg text-sm text-center rounded-md hover:bg-[#25544a] transition-colors">
                                             View Transaction History

@@ -101,10 +101,10 @@ const ActionProMode = () => {
                                     <img onClick={() => setIsShareDropdownOpen(!isShareDropdownOpen)} src={dropdown} className={`sm:w-[15%] w-[10%] cursor-pointer transition-transform duration-300 ${isShareDropdownOpen ? "rotate-180" : ""}`} alt="share-icon" />
                                 </div>
                                 {isShareDropdownOpen && (
-                                    <ul className="absolute top-full w-[99%] left-0 z-10 bg-white border border-[#15413F] mr-4 mt-1 rounded-md">
-                                        <li onClick={() => { setSelectedShare("OA_Tesla"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Tesla Buy</li>
-                                        <li onClick={() => { setSelectedShare("OA_Apple"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Apple Buy</li>
-                                        <li onClick={() => { setSelectedShare("OA_Amazon"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer hover:bg-[#e2e2e2]">OA Amazon Buy</li>
+                                    <ul className="absolute max-h-32 overflow-auto top-full w-[99%] left-0 z-10 bg-white border border-[#15413F] mr-4 mt-1 rounded-md">
+                                        <li onClick={() => { setSelectedShare("OA_Tesla"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Tesla Buy</li>
+                                        <li onClick={() => { setSelectedShare("OA_Apple"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Apple Buy</li>
+                                        <li onClick={() => { setSelectedShare("OA_Amazon"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[16px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Amazon Buy</li>
                                     </ul>
                                 )}
                             </div>

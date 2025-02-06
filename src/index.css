@@ -41,3 +41,31 @@
     background-clip: content-box;
 }
   
+
+
+.account-scrollbar{
+    max-height: 340px;
+    overflow: auto;
+    margin-right: 5px;
+}
+
+.account-scrollbar::-webkit-scrollbar {
+    width: 20px; /* Vertical scrollbar width */
+    height: 20px; /* Horizontal scrollbar height */
+    border-radius: 100px;
+}
+
+.account-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border: 1px solid #146082;
+    /* border-radius: 100px; */
+    /* border-bottom-right-radius: 12px; */
+    margin: 0px; /* Creates spacing for border visibility */
+}
+
+.account-scrollbar::-webkit-scrollbar-thumb {
+    background: #146082;
+    border-radius: 100px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}

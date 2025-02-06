@@ -91,7 +91,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Right Section */}
-                <div className="flex items-center">
+                <div className="flex items-center sm:mr-0 mr-3">
 
                     {/* Modal and Connect Wallet */}
                     <ConnectWallet />

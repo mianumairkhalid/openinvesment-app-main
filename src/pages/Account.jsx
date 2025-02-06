@@ -37,11 +37,11 @@ const Account = () => {
                                 </div>
                                 
                                 {/* Tesla Row */}
-                                <div className="flex w-full items-start shadow-xl">
+                                <div className="flex w-full items-star shadow-xl">
                                     <div className="flex w-[90%]">
-                                        <div className="sm:w-[34.4%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
+                                        <div className="sm:w-[55%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
-                                                Oa Tesla C<span className="text-[#8FC292]">lose</span>
+                                                Oa Tesla A<span className="text-[#8FC292]">mount</span>
                                             </h4>
                                         </div>
                                         <div className="w-full border-[2px] border-[#15413F]">
@@ -55,7 +55,7 @@ const Account = () => {
                                         </div>
                                     </div>
                                     <div className="w-[15%]">
-                                        <div className="flex items-center xl:min-h-[63.3px] min-h-full border-l-0 border-[2px] border-[#15413F]">
+                                        <div className="flex items-center min-h-full border-l-0 border-[2px] border-[#15413F]">
                                             <input 
                                                 type="text" 
                                                 defaultValue="+0%" 
@@ -76,11 +76,13 @@ const Account = () => {
                                 </div>
 
                                 {/* Microsoft Row */}
-                                <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
+                                <div className="flex w-full items-star sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[90%]">
-                                        <div className="sm:w-[34.4%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
+                                        <div className="sm:w-[55%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
-                                                Oa Microsoft
+                                                {/* Oa Microsoft */}
+                                                Oa Microsoft A<span className="text-[#8FC292]">mount</span>
+
                                             </h4>
                                         </div>
                                         <div className="w-full border-[2px] border-[#15413F]">
@@ -94,7 +96,7 @@ const Account = () => {
                                         </div>
                                     </div>
                                     <div className="w-[15%]">
-                                        <div className="flex items-center sm:min-h-[63.3px] min-h-full border-l-0 border-[2px] border-[#15413F]">
+                                        <div className="flex items-center min-h-full border-l-0 border-[2px] border-[#15413F]">
                                             <input 
                                                 type="text" 
                                                 defaultValue="+0%" 
@@ -115,9 +117,9 @@ const Account = () => {
                                 </div>
 
                                 {/* IBM Row */}
-                                <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
+                                <div className="flex w-full items-star sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[90%]">
-                                        <div className="sm:w-[34.4%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
+                                        <div className="sm:w-[55%] w-[60%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
                                                 AO IBM A<span className="text-[#8FC292]">mount</span>
                                             </h4>
@@ -133,7 +135,7 @@ const Account = () => {
                                         </div>
                                     </div>
                                     <div className="w-[15%]">
-                                        <div className="flex items-center sm:min-h-[63.3px] min-h-full border-l-0 border-[2px] border-[#15413F]">
+                                        <div className="flex items-center min-h-full border-l-0 border-[2px] border-[#15413F]">
                                             <input 
                                                 type="text" 
                                                 defaultValue="+0%" 
@@ -174,7 +176,7 @@ const Account = () => {
                                 {/* Open App Row */}
                                 <div className="flex w-full items-start shadow-xl">
                                     <div className="flex w-[100%]">
-                                        <div className="sm:w-[34.4%] w-[40%] border-[2px] border-r-0 border-[#15413F] p-3">
+                                        <div className="sm:w-[34.5%] w-[40%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
                                                 Open App A<span className="text-[#8FC292]">mount</span>
                                             </h4>
@@ -202,7 +204,7 @@ const Account = () => {
                                 </div>
 
                                 {/* ICP Row */}
-                                <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
+                                <div className="flex w-full items-star sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[100%]">
                                         <div className="sm:w-[34.4%] w-[40%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
@@ -232,7 +234,7 @@ const Account = () => {
                                 </div>
 
                                 {/* Bitcoin Row */}
-                                <div className="flex w-full items-start sm:mt-4 mt-3 shadow-xl">
+                                <div className="flex w-full items-star sm:mt-4 mt-3 shadow-xl">
                                     <div className="flex w-[100%]">
                                         <div className="sm:w-[34.4%] w-[40%] border-[2px] border-r-0 border-[#15413F] p-3">
                                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">

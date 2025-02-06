@@ -1,28 +1,28 @@
-import { useState, useEffect, useRef } from 'react';
-import Navbar from "../components/Navbar";
-import logo from "../asset/logo.svg";
-import email from "../asset/email.png";
+import { useState, useEffect, useRef } from 'react'
+import Navbar from "../components/Navbar"
+import logo from "../asset/logo.svg"
+import email from "../asset/email.png"
 
 const TransactionHistory = () => {
-  const [selectedShare, setSelectedShare] = useState('OA_Tesla');
-  const [isShareDropdownOpen, setIsShareDropdownOpen] = useState(false);
+  const [selectedShare, setSelectedShare] = useState('OA_Tesla')
+  const [isShareDropdownOpen, setIsShareDropdownOpen] = useState(false)
   const sharesData = {
     OA_Tesla: {
       totalUnits: 5.8,
       profitLoss: "+50%",
       transactions: [
-        { units: 1.2, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" },
-        { units: 1.2, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" },
-        { units: 1.2, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" }
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" }
       ]
     },
     OA_Apple: {
       totalUnits: 4.5,
       profitLoss: "+42%",
       transactions: [
-        { units: 1.5, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" },
-        { units: 1.5, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" },
-        { units: 1.5, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" }
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" }
       ]
     },
     OA_Amazon: {
@@ -34,18 +34,18 @@ const TransactionHistory = () => {
         { units: 2.1, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+18%" }
       ]
     }
-  };
-  const shareDropdownRef = useRef(null);
+  }
+  const shareDropdownRef = useRef(null)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (shareDropdownRef.current && !shareDropdownRef.current.contains(event.target)) {
-        setIsShareDropdownOpen(false);
+        setIsShareDropdownOpen(false)
       }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-  const currentData = sharesData[selectedShare];
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+  const currentData = sharesData[selectedShare]
   return (
     <>
       <Navbar />
@@ -71,13 +71,18 @@ const TransactionHistory = () => {
                     {selectedShare === "OA_Apple" && "OA Apple Buy"}
                     {selectedShare === "OA_Amazon" && "OA Amazon Buy"}
                   </div>
-                  <img onClick={() => setIsShareDropdownOpen(!isShareDropdownOpen)} src={email} className={`sm:w-[15%] w-[10%] cursor-pointer transition-transform duration-300 ${isShareDropdownOpen ? "rotate-180" : ""}`} alt="share-icon" />
+                  <img
+                    onClick={() => setIsShareDropdownOpen(!isShareDropdownOpen)}
+                    src={email}
+                    className={`sm:w-[15%] w-[10%] cursor-pointer transition-transform duration-300 ${isShareDropdownOpen ? "rotate-180" : ""}`}
+                    alt="share-icon"
+                  />
                 </div>
                 {isShareDropdownOpen && (
                   <ul className="absolute max-h-32 overflow-auto top-full left-0 z-10 w-[99%] bg-white border border-[#15413F] mt-1 rounded-md">
-                    <li onClick={() => { setSelectedShare("OA_Tesla"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Tesla Buy</li>
-                    <li onClick={() => { setSelectedShare("OA_Apple"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Apple Buy</li>
-                    <li onClick={() => { setSelectedShare("OA_Amazon"); setIsShareDropdownOpen(false); }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Amazon Buy</li>
+                    <li onClick={() => { setSelectedShare("OA_Tesla"); setIsShareDropdownOpen(false) }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Tesla Buy</li>
+                    <li onClick={() => { setSelectedShare("OA_Apple"); setIsShareDropdownOpen(false) }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Apple Buy</li>
+                    <li onClick={() => { setSelectedShare("OA_Amazon"); setIsShareDropdownOpen(false) }} className="font-inter sm:text-[15px] text-sm leading-none font-bold uppercase text-[#204E4B] px-2 py-2 cursor-pointer">OA Amazon Buy</li>
                   </ul>
                 )}
               </div>
@@ -95,45 +100,72 @@ const TransactionHistory = () => {
                   </div>
                 </div>
                 <div className="space-y-1">
-                  {currentData.transactions.map((transaction, index) => (
-                    <div key={index} className="flex sm:flex-row flex-col w-full items-start">
-                      <div className="flex sm:w-[70%] w-full sm:shadow-lg">
-                        <div className={`border-[2px] border-r-0 ${index === 0 ? 'border-t-0' : ''} border-[#15413F] p-3`}>
-                          <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
-                            {selectedShare.split('_')[1]} <span className="text-[#8FC292]">Close</span>
-                          </h4>
-                        </div>
-                        <div className={`w-full border-[2px] ${index !== 0 ? 'border-t-[2px]' : 'border-t-0'} border-[#15413F]`}>
-                          <div className="flex items-center min-h-full justify-center">
-                            <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold text-[#204E4B]">
-                              {transaction.units} Units {transaction.timestamp}
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="sm:w-[30%] w-full shadow-lg">
-                        <div className={`flex items-center ${index !== 0 ? 'border-t-[2px]' : ''} border-r-[2px] border-[#15413F]`}>
-                          <div className="border-r-[2px] sm:border-l-0 border-l-[2px] border-[#15413F] p-3">
+                  {currentData.transactions.map((transaction, index) => {
+                    const parts = transaction.timestamp.split(" ")
+                    const datePart = parts[0] || ""
+                    const timePart = parts[1] || ""
+                    return (
+                      <div key={index} className="flex sm:flex-row flex-col w-full items-start">
+                        <div className="flex sm:w-[70%] w-full sm:shadow-lg">
+                          <div className={`border-[2px] border-r-0 ${index === 0 ? 'border-t-0' : ''} border-[#15413F] p-3 flex items-center justify-center`}>
                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
-                              {selectedShare.split('_')[1]} <span className="text-[#8FC292]">Profit</span> &amp; L<span className="text-[#8FC292]">oss</span>
+                              {selectedShare.split('_')[1]} Close
                             </h4>
                           </div>
-                          <div className="w-[50%]">
-                            <h4 className="font-inter text-center sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
-                              {transaction.percentage}
-                            </h4>
+                          <div className={`w-full border-[2px] ${index !== 0 ? 'border-t-[2px]' : 'border-t-0'}  border-[#15413F] flex items-center justify-center space-y-2 py-2`}>
+                           <div className='flex gap-3'>
+                           <div className='flex items-center'>
+                           <input
+                              type="text"
+                              defaultValue={`${transaction.units}`}
+                              className="font-inter sm:text-[18px] text-sm leading-none font-bold text-[#204E4B] text-center bg-transparent focus:outline-none w-10"
+                            />
+                            <h4
+                              className="font-inter sm:text-[18px] text-sm leading-none font-bold text-[#204E4B] text-center bg-transparent focus:outline-none w-10"
+                            
+                            >Units</h4>
+                           </div>
+                            <div className="flex gap-2 w-full">
+                              <input
+                                type="date"
+                                defaultValue={datePart}
+                                className="font-inter sm:text-[18px] text-sm leading-none font-bold text-[#204E4B] text-center bg-transparent focus:outline-none w-1/2"
+                              />
+                              <input
+                                type="time"
+                                defaultValue={timePart}
+                                className="font-inter sm:text-[18px] text-sm leading-none font-bold text-[#204E4B] text-center bg-transparent focus:outline-none w-1/2"
+                              />
+                            </div>
+                           </div>
                           </div>
                         </div>
-                        <div className="w-full">
-                          <div className="flex justify-end w-full">
-                            <h2 className="bg-[#BF0001] w-full text-center text-white text-lg font-normal font-inter uppercase">
-                              Closed
-                            </h2>
+                        <div className="sm:w-[30%] w-full shadow-lg">
+                          <div className={`flex items-center ${index !== 0 ? 'border-t-[2px]' : ''} border-r-[2px] border-[#15413F]`}>
+                            <div className="border-r-[2px] sm:border-l-0 border-l-[2px] border-[#15413F] p-3 flex items-center justify-center">
+                              <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
+                                {selectedShare.split('_')[1]} Profit & Loss
+                              </h4>
+                            </div>
+                            <div className="w-[50%] flex items-center justify-center">
+                              <input
+                                type="text"
+                                defaultValue={transaction.percentage}
+                                className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B] text-center py-2 bg-transparent focus:outline-none w-full"
+                              />
+                            </div>
+                          </div>
+                          <div className="w-full">
+                            <div className="flex justify-end w-full">
+                              <h2 className="bg-[#BF0001] w-full text-center text-white text-base font-normal font-inter uppercase">
+                                Closed
+                              </h2>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                   <div className="mt-5">
                     <button className="bg-[#31685B] hover:bg-[#25544a] text-white w-full py-3 uppercase font-inter text-lg text-center rounded-md transition-colors">
                       View all closed trades
@@ -146,7 +178,7 @@ const TransactionHistory = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default TransactionHistory;
+export default TransactionHistory

@@ -34,7 +34,9 @@ const Guide = () => {
                                 <div className="sm:py-5 py-3 flex justify-center items-center border-b-[1.5px] border-[#15413F]">
                                     <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F] xl:text-left text-center">Listed Exchanges</h3>
                                 </div>
-                                <div className="sm:px-10  px-5 sm:py-8 py-4 space-y-3 rounded-xl sm:min-h-[280px] min-h-[200px]">
+                                <div className="sm:px-10  px-5 sm:py-8 py-4 space-y-3 rounded-xl guide-scrollbar">
+                                    
+
                                     <div className="flex items-center gap-5">
                                         <img className="min-w-[23%]" src={icpSwap} alt="" />
                                         <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">icp swap exchange</h4>
@@ -46,17 +48,32 @@ const Guide = () => {
                                     </div>
 
                                     <div className="flex items-center gap-5">
+                                        <img className="min-w-[23%]" src={icpSwap} alt="" />
+                                        <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">icp swap exchange</h4>
+                                    </div>
+
+                                    <div className="flex items-center gap-5">
                                         <img className="min-w-[23%]" src={coinGeko} alt="" />
                                         <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">coin geko exchange</h4>
+                                    </div>
+
+                                    <div className="flex items-center gap-5">
+                                        <img className="min-w-[23%]" src={icpSwap} alt="" />
+                                        <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">icp swap exchange</h4>
+                                    </div>
+
+                                    <div className="flex items-center gap-5">
+                                        <img className="min-w-[23%]" src={kongSwap} alt="" />
+                                        <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">kong swap exchange</h4>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="border-[1.5px] border-[#15413F]  shadow-2xl rounded-2xl bg-white">
+                            <div className="border-[1.5px] border-[#15413F] shadow-2xl rounded-2xl bg-white">
                                 <div className="sm:py-5 py-3 flex justify-center items-center border-b-[1.5px] border-[#15413F]">
                                     <h3 className="font-inter sm:text-3xl text-xl font-bold uppercase text-[#15413F] xl:text-left text-center">Listed Exchanges</h3>
                                 </div>
-                                <div className="sm:px-10  px-5 sm:py-8 py-4 space-y-3 rounded-xl sm:min-h-[280px] min-h-[200px]">
+                                <div className="sm:px-10  px-5 sm:py-8 py-4 space-y-3 rounded-xl guide-scrollbar">
                                     <div className="flex items-center gap-5">
                                         <img className="min-w-[23%]" src={dex} alt="" />
                                         <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">Dex Screener</h4>
@@ -70,6 +87,16 @@ const Guide = () => {
                                     <div className="flex items-center gap-5">
                                         <img className="min-w-[23%]" src={icpSwap} alt="" />
                                         <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">ICP Swag Pro</h4>
+                                    </div>
+
+                                    <div className="flex items-center gap-5">
+                                        <img className="min-w-[23%]" src={icpTokens} alt="" />
+                                        <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">ICP Tokens</h4>
+                                    </div>
+
+                                    <div className="flex items-center gap-5">
+                                        <img className="min-w-[23%]" src={dex} alt="" />
+                                        <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">Dex Screener</h4>
                                     </div>
                                 </div>
                             </div>

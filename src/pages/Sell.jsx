@@ -62,7 +62,7 @@ const Sell = () => {
             </div>
             <div className="pl-4 flex items-center">
               <h3 className="font-inter py-3 sm:text-3xl text-xl font-bold leading-none uppercase text-[#8ABD90]">
-                <span className="text-[#15413F]">B</span>uy <br />
+                <span className="text-[#15413F]">S</span>ell <br />
                 <span className="text-[#15413F]">S</span>hares
               </h3>
             </div>

@@ -89,11 +89,11 @@ const TransactionHistory = () => {
               <div className="w-full">
                 <div className="border-[2px] sm:border-t-[2px] border-t-0 border-[#15413F] flex">
                   <div className="flex w-full">
-                    <div className="flex items-center min-h-[50px] justify-center w-full">
-                      <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#679877]">
+                    <div className="flex items-center min-h-[50px] justify-center w-full sm:px-0 px-2">
+                      <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#679877] sm:text-left text-center">
                         Total Units Closed :
                       </h4>
-                      <h4 className="font-inter font-extrabold sm:text-[18px] text-sm leading-none uppercase text-[#204E4B]">
+                      <h4 className="font-inter font-extrabold sm:text-[18px] text-sm leading-none uppercase text-[#204E4B]  sm:text-left text-center">
                         &nbsp; {currentData.totalUnits} Units @ P/L {currentData.profitLoss}
                       </h4>
                     </div>
@@ -105,14 +105,14 @@ const TransactionHistory = () => {
                     const datePart = parts[0] || ""
                     const timePart = parts[1] || ""
                     return (
-                      <div key={index} className="flex sm:flex-row flex-col w-full items-start">
-                        <div className="flex sm:w-[70%] w-full sm:shadow-lg">
-                          <div className={`border-[2px] border-r-0 ${index === 0 ? 'border-t-0' : ''} border-[#15413F] p-3 flex items-center justify-center`}>
+                      <div key={index} className="sm:flex w-full items-start">
+                        <div className="sm:flex sm:w-[70%] w-full sm:shadow-lg">
+                          <div className={`border-[2px] sm:border-r-0 border-r-2 ${index === 0 ? 'border-t-0' : ''} border-[#15413F] p-3 flex items-center justify-center`}>
                             <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
                               {selectedShare.split('_')[1]} Close
                             </h4>
                           </div>
-                          <div className={`w-full border-[2px] ${index !== 0 ? 'border-t-[2px]' : 'border-t-0'}  border-[#15413F] flex items-center justify-center space-y-2 py-2`}>
+                          <div className={`w-full border-[2px] ${index !== 0 ? 'sm:border-t-[2px] border-t-0' : 'border-t-0'}  border-[#15413F] flex items-center justify-center space-y-2 py-2`}>
                            <div className='flex gap-3'>
                            <div className='flex items-center'>
                            <input
@@ -141,7 +141,7 @@ const TransactionHistory = () => {
                           </div>
                         </div>
                         <div className="sm:w-[30%] w-full shadow-lg">
-                          <div className={`flex items-center ${index !== 0 ? 'border-t-[2px]' : ''} border-r-[2px] border-[#15413F]`}>
+                          <div className={`flex items-center ${index !== 0 ? 'sm:border-t-[2px] border-t-0' : ''} border-r-[2px] border-[#15413F]`}>
                             <div className="border-r-[2px] sm:border-l-0 border-l-[2px] border-[#15413F] p-3 flex items-center justify-center">
                               <h4 className="font-inter sm:text-[18px] text-sm leading-none font-bold uppercase text-[#204E4B]">
                                 {selectedShare.split('_')[1]} Profit & Loss

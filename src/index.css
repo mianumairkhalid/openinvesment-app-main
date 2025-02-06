@@ -14,3 +14,30 @@
 #connect .ik-flex{
     padding: 0 !important;
 }
+
+.guide-scrollbar{
+    max-height: 280px;
+    overflow: auto;
+}
+
+.guide-scrollbar::-webkit-scrollbar {
+    width: 20px; /* Vertical scrollbar width */
+    height: 20px; /* Horizontal scrollbar height */
+    border-radius: 100px;
+}
+
+.guide-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border: 1px solid #146082;
+    /* border-radius: 100px; */
+    border-bottom-right-radius: 12px;
+    margin: 0px; /* Creates spacing for border visibility */
+}
+
+.guide-scrollbar::-webkit-scrollbar-thumb {
+    background: #146082;
+    border-radius: 100px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+  

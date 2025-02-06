@@ -55,7 +55,7 @@ const Sell = () => {
     <>
       <Navbar />
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#123a38] to-[#86ba8e]">
-        <div className="xl:w-[40%] xl:mt-0 lg:mt-7 md:w-[70%] w-[95%] sm:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
+        <div className="xl:w-[40%] sm:mb-0 mb-5 xl:mt-0 lg:mt-7 md:w-[70%] w-[95%] sm:mt-0 mt-5 mx-auto bg-white rounded-3xl border border-[#6EA280]">
           <div className="flex border-b-[2.5px] border-[#103532]">
             <div className="sm:w-[20%] w-[35%] sm:px-0 px-3 py-5 border-r-[2.5px] border-[#103532] flex justify-center items-center">
               <img src={logo} className="sm:w-[50%] w-[60%]" alt="logo" />

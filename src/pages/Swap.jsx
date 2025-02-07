@@ -200,7 +200,7 @@ const Swap = () => {
                             {displayEquity}
                           </h4>
                           <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total OA {displayEquity.split(' ')[1] || displayEquity}: 2.5
+                            Total OA {displayEquity.split(' ')[1] || displayEquity}: 0.0
                           </p>
                         </div>
                         <div className="sm:w-[33%] text-center my-4">
@@ -213,7 +213,7 @@ const Swap = () => {
                             {displayCurrency}
                           </h4>
                           <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total Digital: 2.5
+                            Total Digital: 0.0
                           </p>
                         </div>
                       </div>

@@ -96,55 +96,6 @@ const Buy = () => {
                   <div className="sm:flex shadow-lg">
                     <div className="sm:w-[30%] w-full rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
-                        E<span className="text-[#8FC292]">quity</span>
-                      </h4>
-                      <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B] sm:mt-1">
-                        S<span className="text-[#8FC292]">hares</span>
-                      </h4>
-                    </div>
-                    <div ref={equityRef} className="rounded-r-md select-box-div w-full border-2 sm:border-l-0 border-[#103532] relative">
-                      <div className="flex items-center px-3 sm:py-2 py-3 min-h-full cursor-pointer">
-                        <div className="w-[7%] sm:block hidden">
-                          <img 
-                            src={dropdown} 
-                            onClick={() => setIsEquityDropdownOpen(!isEquityDropdownOpen)} 
-                            alt="equity"
-                            className={`cursor-pointer transition-transform duration-300 ${isEquityDropdownOpen ? 'rotate-180' : ''}`}
-                          />
-                        </div>
-                        <img 
-                          src={dropdown} 
-                          onClick={() => setIsEquityDropdownOpen(!isEquityDropdownOpen)} 
-                          className={`sm:hidden block w-[7%] mr-3 cursor-pointer transition-transform duration-300 ${isEquityDropdownOpen ? 'rotate-180' : ''}`}
-                          alt="equity"
-                        />
-                        <div className="w-[93%] text-center">
-                          <span className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {selectedEquity}
-                          </span>
-                        </div>
-                      </div>
-                      {isEquityDropdownOpen && (
-                        <ul className="absolute z-10 w-full bg-white border border-[#103532] mt-1 rounded-md max-h-32 overflow-auto">
-                          {equityOptions.map(option => (
-                            <li key={option} onClick={() => { setSelectedEquity(option); setDisplayEquity(option); setIsEquityDropdownOpen(false); }} className="font-inter text-[16px] font-semibold text-[#204E4B] px-3 py-2 cursor-pointer">
-                              {option}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  </div>
-                  <div className="sm:ml-[25%]">
-                    <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                      USD Live Equity Share Value: $0.00
-                    </p>
-                  </div>
-                </div>
-                <div className="w-full mt-3">
-                  <div className="sm:flex shadow-lg">
-                    <div className="sm:w-[30%] w-full rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
-                      <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
                         D<span className="text-[#8FC292]">igital</span>
                       </h4>
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B] sm:mt-1">
@@ -191,16 +142,66 @@ const Buy = () => {
                   </div>
                 </div>
                 <div className="w-full mt-3">
+                  <div className="sm:flex shadow-lg">
+                    <div className="sm:w-[30%] w-full rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
+                      <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
+                        E<span className="text-[#8FC292]">quity</span>
+                      </h4>
+                      <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B] sm:mt-1">
+                        S<span className="text-[#8FC292]">hares</span>
+                      </h4>
+                    </div>
+                    <div ref={equityRef} className="rounded-r-md select-box-div w-full border-2 sm:border-l-0 border-[#103532] relative">
+                      <div className="flex items-center px-3 sm:py-2 py-3 min-h-full cursor-pointer">
+                        <div className="w-[7%] sm:block hidden">
+                          <img 
+                            src={dropdown} 
+                            onClick={() => setIsEquityDropdownOpen(!isEquityDropdownOpen)} 
+                            alt="equity"
+                            className={`cursor-pointer transition-transform duration-300 ${isEquityDropdownOpen ? 'rotate-180' : ''}`}
+                          />
+                        </div>
+                        <img 
+                          src={dropdown} 
+                          onClick={() => setIsEquityDropdownOpen(!isEquityDropdownOpen)} 
+                          className={`sm:hidden block w-[7%] mr-3 cursor-pointer transition-transform duration-300 ${isEquityDropdownOpen ? 'rotate-180' : ''}`}
+                          alt="equity"
+                        />
+                        <div className="w-[93%] text-center">
+                          <span className="font-inter text-[18px] font-bold text-[#204E4B]">
+                            {selectedEquity}
+                          </span>
+                        </div>
+                      </div>
+                      {isEquityDropdownOpen && (
+                        <ul className="absolute z-10 w-full bg-white border border-[#103532] mt-1 rounded-md max-h-32 overflow-auto">
+                          {equityOptions.map(option => (
+                            <li key={option} onClick={() => { setSelectedEquity(option); setDisplayEquity(option); setIsEquityDropdownOpen(false); }} className="font-inter text-[16px] font-semibold text-[#204E4B] px-3 py-2 cursor-pointer">
+                              {option}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                  <div className="sm:ml-[25%]">
+                    <p className="mt-1 font-bold text-[#528067] text-[9px]">
+                      USD Live Equity Share Value: $0.00
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="w-full mt-3">
                   <div className="sm:flex">
                     <div className="w-[30%] p-3"></div>
                     <div className="w-full">
                       <div className="sm:flex items-center justify-between rounded-md border-2 border-[#103532] px-4 sm:py-0 py-2">
-                        <div className="sm:w-[33%] text-center">
+                      <div className="sm:w-[33%] text-center">
                           <h4 className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {displayEquity}
+                            {displayCurrency}
                           </h4>
                           <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total OA {displayEquity.split(' ')[1] || displayEquity}: 2.5
+                            Total Digital: 0.0
                           </p>
                         </div>
                         <div className="sm:w-[33%] text-center my-4">
@@ -210,10 +211,10 @@ const Buy = () => {
                         </div>
                         <div className="sm:w-[33%] text-center">
                           <h4 className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {displayCurrency}
+                            {displayEquity}
                           </h4>
                           <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total Digital: 2.5
+                            Total OA {displayEquity.split(' ')[1] || displayEquity}: 0.0
                           </p>
                         </div>
                       </div>

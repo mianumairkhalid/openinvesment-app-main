@@ -195,7 +195,7 @@ const Sell = () => {
                     <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
                       T<span className="text-[#8FC292]">rade</span> <br />
                     </h4>
-                    <h4 className="mt-1 font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
+                    <h4 className="sm:mt-1 font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
                       S<span className="text-[#8FC292]">ummary</span>
                     </h4>
                   </div>

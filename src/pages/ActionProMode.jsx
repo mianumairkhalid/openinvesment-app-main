@@ -84,7 +84,7 @@ const ActionProMode = () => {
                         </div>
                         <div className="pl-4">
                             <h3 className="font-inter sm:text-3xl text-base font-bold leading-none uppercase text-[#8ABD90]"> 
-                                <span className="text-[#15413F]">A</span>ction <br /> 
+                                <span className="text-[#15413F]">A</span>ccount <br /> 
                                 <span className="text-[#15413F]">P</span>ro Mode
                             </h3>
                         </div>
@@ -109,7 +109,7 @@ const ActionProMode = () => {
                                 )}
                             </div>
                             <div className="w-full">
-                                <div className="">
+                                <div className="account-scrollbar">
                                     <div className="flex w-full items-start">
                                         <div className="flex sm:w-[90%] w-[70%] min-h-[53.5px]">
                                             <div className="w-full border-[2px] border-[#15413F] ">
@@ -243,12 +243,13 @@ const ActionProMode = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mt-5 flex justify-end">
+                                   
+                                </div>
+                                <div className="mt-5 flex justify-end">
                                         <Link to={'/transaction-history'} className="bg-[#31685B] text-white sm:w-[40%] w-full py-3 uppercase font-inter xl:text-lg text-sm text-center rounded-md hover:bg-[#25544a] transition-colors">
                                             View Transaction History
                                         </Link>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>

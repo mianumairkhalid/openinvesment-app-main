@@ -195,30 +195,7 @@ const Buy = () => {
                   <div className="sm:flex">
                     <div className="w-[30%] p-3"></div>
                     <div className="w-full">
-                      <div className="sm:flex items-center justify-between rounded-md border-2 border-[#103532] px-4 sm:py-0 py-2">
-                      <div className="sm:w-[33%] text-center">
-                          <h4 className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {displayCurrency}
-                          </h4>
-                          <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total Digital: 0.0
-                          </p>
-                        </div>
-                        <div className="sm:w-[33%] text-center my-4">
-                          <button onClick={handleSwap} className="hover:scale-110 transition-transform duration-300">
-                            <img src={swap} className="sm:w-[40%] w-[15%] mx-auto border-2 border-[#86BA8E] p-3 rounded-md" alt="swap" />
-                          </button>
-                        </div>
-                        <div className="sm:w-[33%] text-center">
-                          <h4 className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {displayEquity}
-                          </h4>
-                          <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total OA {displayEquity.split(' ')[1] || displayEquity}: 0.0
-                          </p>
-                        </div>
-                      </div>
-                      <div className="mt-10">
+                      <div className="mt-4">
                         <button className="bg-[#31685B] hover:bg-[#25544a] text-white w-full py-3 uppercase font-inter text-lg text-center rounded-md transition-colors duration-300">
                           Confirm Buy
                         </button>

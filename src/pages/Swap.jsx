@@ -71,7 +71,7 @@ const Swap = () => {
             <div className="w-full flex items-start">
               <div className="w-full">
                 <div className="sm:flex w-full shadow-lg">
-                  <div className="sm:w-[30%] rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
+                  <div className="sm:w-[30%] sm:rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
                     <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
                       U<span className="text-[#8FC292]">SD</span>
                     </h4>
@@ -79,7 +79,7 @@ const Swap = () => {
                       A<span className="text-[#8FC292]">mount</span>
                     </h4>
                   </div>
-                  <div className="rounded-r-md w-full border-2 sm:border-l-0 border-[#103532]">
+                  <div className="sm:rounded-r-md w-full border-2 sm:border-l-0 border-[#103532] sm:border-t-2 border-t-0">
                     <div className="flex items-center justify-center gap-1 h-full py-2 pl-20">
                       <span className="font-inter text-[18px] font-bold text-[#204E4B] ">$</span>
                       <input 
@@ -94,7 +94,7 @@ const Swap = () => {
                 </div>
                 <div className="w-full mt-7">
                   <div className="sm:flex shadow-lg">
-                    <div className="sm:w-[30%] w-full rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
+                    <div className="sm:w-[30%] w-full sm:rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
                         E<span className="text-[#8FC292]">quity</span>
                       </h4>
@@ -102,7 +102,7 @@ const Swap = () => {
                         S<span className="text-[#8FC292]">hares</span>
                       </h4>
                     </div>
-                    <div ref={equityRef} className="rounded-r-md select-box-div w-full border-2 sm:border-l-0 border-[#103532] relative">
+                    <div ref={equityRef} className="sm:rounded-r-md select-box-div w-full border-2 sm:border-l-0 border-[#103532] relative sm:border-t-2 border-t-0">
                       <div className="flex items-center px-3 sm:py-2 py-3 min-h-full cursor-pointer">
                         <div className="w-[7%] sm:block hidden">
                           <img 
@@ -143,7 +143,7 @@ const Swap = () => {
                 </div>
                 <div className="w-full mt-3">
                   <div className="sm:flex shadow-lg">
-                    <div className="sm:w-[30%] w-full rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
+                    <div className="sm:w-[30%] w-full sm:rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
                         D<span className="text-[#8FC292]">igital</span>
                       </h4>
@@ -151,7 +151,7 @@ const Swap = () => {
                         C<span className="text-[#8FC292]">urrency</span>
                       </h4>
                     </div>
-                    <div ref={currencyRef} className="rounded-r-md select-box-div w-full border-2 sm:border-l-0  border-[#103532] relative">
+                    <div ref={currencyRef} className="sm:rounded-r-md select-box-div w-full border-2 sm:border-l-0  border-[#103532] relative sm:border-t-2 border-t-0">
                       <div className="flex items-center px-3 sm:py-2 py-3 min-h-full cursor-pointer">
                         <div className="sm:w-[7%] sm:block hidden">
                           <img 
@@ -192,7 +192,7 @@ const Swap = () => {
                 </div>
                 <div className="w-full mt-3">
                   <div className="sm:flex">
-                    <div className="w-[30%] p-3"></div>
+                    <div className="w-[30%] sm:p-3"></div>
                     <div className="w-full">
                       <div className="sm:flex items-center justify-between rounded-md border-2 border-[#103532] px-4 sm:py-0 py-2">
                         <div className="sm:w-[33%] text-center">

@@ -190,6 +190,41 @@ const Sell = () => {
                     </p>
                   </div>
                 </div>
+                <div className="sm:flex w-full shadow-lg mt-3">
+                  <div className="sm:w-[30%] sm:rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
+                    <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
+                      T<span className="text-[#8FC292]">rade</span> <br />
+                    </h4>
+                    <h4 className="mt-1 font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
+                      S<span className="text-[#8FC292]">ummary</span>
+                    </h4>
+                  </div>
+                  <div className="sm:rounded-r-md w-full border-2 sm:border-l-0 border-[#103532] sm:border-t-2 border-t-0">
+                    <div className="flex items-center gap-1 h-full py-2">
+                      <div className='w-full'>
+                        <div className='border-b-2 border-[#103532] pl-2 pb-3 pt-1 w-full'>
+                          <p className="font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
+                            Equity <span className="text-[#8FC292]"> Sell : 0.00 </span> OA Tesla
+                          </p>
+
+                          <p className="mt-2.5 font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
+                            Digital <span className="text-[#8FC292]"> Received : 0.00 </span> Open APP
+                          </p>
+
+                          <p className="mt-2.5  font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
+                            Fee Amount <span className="text-[#8FC292]"> : 0.00 </span> Open APP
+                          </p>
+                        </div>
+                        <div className='pl-2 pt-2'>
+                          <p className="font-inter text-[14px] sm:leading-none font-semibold uppercase text-[#204E4B]">
+                            Total Digital Received <span className="text-[#8FC292]"> : 0.00 </span> OA Tesla
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
                 <div className="w-full mt-3">
                   <div className="sm:flex">
                     <div className="w-[30%] sm:p-3"></div>

@@ -234,8 +234,13 @@ const Sell = () => {
                         </div>
                         <div className='pl-2 pt-2'>
                           <p className="font-inter text-[14px] sm:leading-none font-semibold uppercase text-[#204E4B]  flex justify-between pr-4">
-                            <span> Total Digital Received: <span className="text-[#8FC292]">{selectedEquity}</span></span>
-                            <span> 0.00</span>
+                            <span> Total Digital Received: </span>
+                            <span>
+                              <span className="text-[#8FC292] pr-2">
+                                0.00
+                              </span>
+                              {selectedEquity}
+                            </span>
                           </p>
                         </div>
                       </div>

@@ -1,30 +1,39 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import Navbar from "../components/Navbar";
 import logo from "../asset/logo.svg";
 import dropdown from "../asset/email.png";
 import swap from "../asset/swap.png";
 
-const Swap = () => {
-  const [selectedEquity, setSelectedEquity] = useState('OA Tesla');
-  const [selectedCurrency, setSelectedCurrency] = useState('OPEN APP');
-  const [displayEquity, setDisplayEquity] = useState(selectedEquity);
-  const [displayCurrency, setDisplayCurrency] = useState(selectedCurrency);
-  const [amount, setAmount] = useState('0.00');
-  const [equityOptions, setEquityOptions] = useState(['OA Tesla', 'OA Apple', 'OA Amazon', 'OA Google']);
-  const [currencyOptions, setCurrencyOptions] = useState(['OPEN APP', 'Bitcoin', 'Ethereum', 'USD Coin']);
-  const [isEquityDropdownOpen, setIsEquityDropdownOpen] = useState(false);
-  const [isCurrencyDropdownOpen, setIsCurrencyDropdownOpen] = useState(false);
+const EQUITY_OPTIONS = ['OA Tesla', 'OA Apple', 'OA Amazon', 'OA Google'];
 
-  const equityRef = useRef(null);
-  const currencyRef = useRef(null);
+const Swap = () => {
+  const [selectedEquityFrom, setSelectedEquityFrom] = useState(EQUITY_OPTIONS[0]);
+  const [selectedEquityTo, setSelectedEquityTo] = useState(EQUITY_OPTIONS[1]);
+  const [amount, setAmount] = useState('0.00');
+  const [isFromDropdownOpen, setIsFromDropdownOpen] = useState(false);
+  const [isToDropdownOpen, setIsToDropdownOpen] = useState(false);
+
+  const fromRef = useRef(null);
+  const toRef = useRef(null);
+
+  const equityToOptions = useMemo(() => 
+    EQUITY_OPTIONS.filter(option => option !== selectedEquityFrom),
+    [selectedEquityFrom]
+  );
+
+  useEffect(() => {
+    if (!equityToOptions.includes(selectedEquityTo)) {
+      setSelectedEquityTo(equityToOptions[0]);
+    }
+  }, [equityToOptions, selectedEquityTo]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (equityRef.current && !equityRef.current.contains(event.target)) {
-        setIsEquityDropdownOpen(false);
+      if (fromRef.current && !fromRef.current.contains(event.target)) {
+        setIsFromDropdownOpen(false);
       }
-      if (currencyRef.current && !currencyRef.current.contains(event.target)) {
-        setIsCurrencyDropdownOpen(false);
+      if (toRef.current && !toRef.current.contains(event.target)) {
+        setIsToDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -32,18 +41,9 @@ const Swap = () => {
   }, []);
 
   const handleSwap = () => {
-    const newDisplayEquity = displayCurrency;
-    const newDisplayCurrency = displayEquity;
-    setDisplayEquity(newDisplayEquity);
-    setDisplayCurrency(newDisplayCurrency);
-    const newSelectedEquity = selectedCurrency;
-    const newSelectedCurrency = selectedEquity;
-    setSelectedEquity(newSelectedEquity);
-    setSelectedCurrency(newSelectedCurrency);
-    const newEquityOptions = currencyOptions;
-    const newCurrencyOptions = equityOptions;
-    setEquityOptions(newEquityOptions);
-    setCurrencyOptions(newCurrencyOptions);
+    const temp = selectedEquityFrom;
+    setSelectedEquityFrom(selectedEquityTo);
+    setSelectedEquityTo(temp);
   };
 
   const handleAmountChange = (e) => {
@@ -96,38 +96,39 @@ const Swap = () => {
                   <div className="sm:flex shadow-lg">
                     <div className="sm:w-[30%] w-full sm:rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
-                        E<span className="text-[#8FC292]">quity</span>
+                        E<span className="text-[#8FC292]">quity</span> <br />
+
                       </h4>
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B] sm:mt-1">
                         S<span className="text-[#8FC292]">hares</span>
                       </h4>
                     </div>
-                    <div ref={equityRef} className="sm:rounded-r-md select-box-div w-full border-2 sm:border-l-0 border-[#103532] relative sm:border-t-2 border-t-0">
+                    <div ref={fromRef} className="sm:rounded-r-md select-box-div w-full border-2 sm:border-l-0 border-[#103532] relative sm:border-t-2 border-t-0">
                       <div className="flex items-center px-3 sm:py-2 py-3 min-h-full cursor-pointer">
                         <div className="w-[7%] sm:block hidden">
                           <img 
                             src={dropdown} 
-                            onClick={() => setIsEquityDropdownOpen(!isEquityDropdownOpen)} 
-                            alt="equity"
-                            className={`cursor-pointer transition-transform duration-300 ${isEquityDropdownOpen ? 'rotate-180' : ''}`}
+                            onClick={() => setIsFromDropdownOpen(!isFromDropdownOpen)} 
+                            alt="from"
+                            className={`cursor-pointer transition-transform duration-300 ${isFromDropdownOpen ? 'rotate-180' : ''}`}
                           />
                         </div>
                         <img 
                           src={dropdown} 
-                          onClick={() => setIsEquityDropdownOpen(!isEquityDropdownOpen)} 
-                          className={`sm:hidden block w-[7%] mr-3 cursor-pointer transition-transform duration-300 ${isEquityDropdownOpen ? 'rotate-180' : ''}`}
-                          alt="equity"
+                          onClick={() => setIsFromDropdownOpen(!isFromDropdownOpen)} 
+                          className={`sm:hidden block w-[7%] mr-3 cursor-pointer transition-transform duration-300 ${isFromDropdownOpen ? 'rotate-180' : ''}`}
+                          alt="from"
                         />
                         <div className="w-[93%] text-center">
                           <span className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {selectedEquity}
+                            {selectedEquityFrom}
                           </span>
                         </div>
                       </div>
-                      {isEquityDropdownOpen && (
+                      {isFromDropdownOpen && (
                         <ul className="absolute z-10 w-full bg-white border border-[#103532] mt-1 rounded-md max-h-32 overflow-auto">
-                          {equityOptions.map(option => (
-                            <li key={option} onClick={() => { setSelectedEquity(option); setDisplayEquity(option); setIsEquityDropdownOpen(false); }} className="font-inter text-[16px] font-semibold text-[#204E4B] px-3 py-2 cursor-pointer">
+                          {EQUITY_OPTIONS.map(option => (
+                            <li key={option} onClick={() => { setSelectedEquityFrom(option); setIsFromDropdownOpen(false); }} className="font-inter text-[16px] font-semibold text-[#204E4B] px-3 py-2 cursor-pointer">
                               {option}
                             </li>
                           ))}
@@ -145,38 +146,38 @@ const Swap = () => {
                   <div className="sm:flex shadow-lg">
                     <div className="sm:w-[30%] w-full sm:rounded-l-md border-2 border-[#103532] p-3 justify-center sm:items-start items-center flex sm:flex-col flex-row sm:gap-0 gap-2">
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B]">
-                        D<span className="text-[#8FC292]">igital</span>
+                        E<span className="text-[#8FC292]">quity</span> <br />
                       </h4>
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#204E4B] sm:mt-1">
-                        C<span className="text-[#8FC292]">urrency</span>
+                        S<span className="text-[#8FC292]">hares</span>
                       </h4>
                     </div>
-                    <div ref={currencyRef} className="sm:rounded-r-md select-box-div w-full border-2 sm:border-l-0  border-[#103532] relative sm:border-t-2 border-t-0">
+                    <div ref={toRef} className="sm:rounded-r-md select-box-div w-full border-2 sm:border-l-0  border-[#103532] relative sm:border-t-2 border-t-0">
                       <div className="flex items-center px-3 sm:py-2 py-3 min-h-full cursor-pointer">
                         <div className="sm:w-[7%] sm:block hidden">
                           <img 
-                          onClick={() => setIsCurrencyDropdownOpen(!isCurrencyDropdownOpen)} 
+                          onClick={() => setIsToDropdownOpen(!isToDropdownOpen)} 
                             src={dropdown} 
-                            alt="currency"
-                            className={`cursor-pointer transition-transform duration-300 ${isCurrencyDropdownOpen ? 'rotate-180' : ''}`}
+                            alt="to"
+                            className={`cursor-pointer transition-transform duration-300 ${isToDropdownOpen ? 'rotate-180' : ''}`}
                           />
                         </div>
                         <img 
-                        onClick={() => setIsCurrencyDropdownOpen(!isCurrencyDropdownOpen)} 
+                        onClick={() => setIsToDropdownOpen(!isToDropdownOpen)} 
                           src={dropdown} 
-                          className={`sm:hidden block w-[7%] mr-3 cursor-pointer transition-transform duration-300 ${isCurrencyDropdownOpen ? 'rotate-180' : ''}`}
-                          alt="currency"
+                          className={`sm:hidden block w-[7%] mr-3 cursor-pointer transition-transform duration-300 ${isToDropdownOpen ? 'rotate-180' : ''}`}
+                          alt="to"
                         />
                         <div className="w-[93%] text-center">
                           <span className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {selectedCurrency}
+                            {selectedEquityTo}
                           </span>
                         </div>
                       </div>
-                      {isCurrencyDropdownOpen && (
+                      {isToDropdownOpen && (
                         <ul className="absolute z-10 w-full max-h-32 overflow-auto bg-white border border-[#103532] mt-1 rounded-md">
-                          {currencyOptions.map(option => (
-                            <li key={option} onClick={() => { setSelectedCurrency(option); setDisplayCurrency(option); setIsCurrencyDropdownOpen(false); }} className="font-inter text-[16px] font-semibold text-[#204E4B] px-3 py-2 cursor-pointer">
+                          {equityToOptions.map(option => (
+                            <li key={option} onClick={() => { setSelectedEquityTo(option); setIsToDropdownOpen(false); }} className="font-inter text-[16px] font-semibold text-[#204E4B] px-3 py-2 cursor-pointer">
                               {option}
                             </li>
                           ))}
@@ -186,7 +187,7 @@ const Swap = () => {
                   </div>
                   <div className="sm:ml-[25%]">
                     <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                      USD Live Digital Currency Value: $0.00
+                      USD Live Equity Share Value: $0.00
                     </p>
                   </div>
                 </div>
@@ -197,10 +198,10 @@ const Swap = () => {
                       <div className="sm:flex items-center justify-between rounded-md border-2 border-[#103532] px-4 sm:py-0 py-2">
                         <div className="sm:w-[33%] text-center">
                           <h4 className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {displayEquity}
+                            {selectedEquityFrom}
                           </h4>
                           <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total OA {displayEquity.split(' ')[1] || displayEquity}: 0.0
+                            Total OA {selectedEquityFrom.split(' ')[1] || selectedEquityFrom}: 0.0
                           </p>
                         </div>
                         <div className="sm:w-[33%] text-center my-4">
@@ -210,10 +211,10 @@ const Swap = () => {
                         </div>
                         <div className="sm:w-[33%] text-center">
                           <h4 className="font-inter text-[18px] font-bold text-[#204E4B]">
-                            {displayCurrency}
+                            {selectedEquityTo}
                           </h4>
                           <p className="mt-1 font-bold text-[#528067] text-[9px]">
-                            Total Digital: 0.0
+                            Total OA {selectedEquityTo.split(' ')[1] || selectedEquityTo}: 0.0
                           </p>
                         </div>
                       </div>

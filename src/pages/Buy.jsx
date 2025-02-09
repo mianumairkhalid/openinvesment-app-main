@@ -205,24 +205,23 @@ const Buy = () => {
                       <div className='w-full'>
                         <div className='border-b-2 border-[#103532] pl-2 pb-3 pt-1 w-full'>
                           <p className="font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
-                            Digital <span className="text-[#8FC292]"> Escrow : 0.00 </span> Open APP
+                            Digital Escrow: <span className="text-[#8FC292]">{selectedCurrency}</span> 0.00
                           </p>
 
                           <p className="mt-2.5 font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
-                            Equity <span className="text-[#8FC292]"> Received : 0.00 </span> OA Tesla
+                            Equity Received: <span className="text-[#8FC292]">{selectedEquity}</span> 0.00
                           </p>
 
                           <p className="mt-2.5  font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
-                            Fee Amount <span className="text-[#8FC292]"> : 0.00 </span> Open APP
+                            Fee Amount: <span className="text-[#8FC292]">{selectedCurrency}</span> 0.00
                           </p>
                         </div>
                         <div className='pl-2 pt-2'>
                           <p className="font-inter text-[14px] sm:leading-none font-semibold uppercase text-[#204E4B]">
-                            Total Equity Received <span className="text-[#8FC292]"> : 0.00 </span> OA Tesla
+                            Total Equity Received: <span className="text-[#8FC292]">{selectedEquity}</span> 0.00
                           </p>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>

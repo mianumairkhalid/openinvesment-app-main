@@ -26,7 +26,7 @@ const Account = () => {
                     <div className="xl:px-16 sm:px-4 px-2">
                         <div className="flex sm:flex-row flex-col justify-between">
                             {/* Equity Section */}
-                            <div className="sm:w-[50%] sm:py-10 py-5 sm:border-r-[2px] border-[#15413F]">
+                            <div className="sm:w-[50%] sm:py-10 py-5 sm:pb-10 pb-10 sm:border-r-[2px] border-[#15413F] sm:border-b-0 border-b-2">
                                 <div className="text-[#296A5B] sm:text-lg text-sm leading-none mb-3 font-bold sm:px-5 px-2">
                                     Total Equity Shares Holding : $
                                     <input
@@ -164,8 +164,8 @@ const Account = () => {
                             </div>
 
                             {/* Digital Section */}
-                            <div className="sm:w-[50%] sm:py-10 py-5 sm:px-5 sm:mt-0 mt-5">
-                                <div className="text-[#296A5B] sm:text-lg text-sm leading-none mb-3 font-bold sm:px-0">
+                            <div className="sm:w-[50%] sm:py-10 py-5 sm:px-5 sm:mt-0 mt-3">
+                                <div className="text-[#296A5B] sm:text-lg text-sm leading-none mb-3 font-bold sm:px-0 px-2">
                                     Total Digital Shares Holding : $
                                     <input
                                         type="text"

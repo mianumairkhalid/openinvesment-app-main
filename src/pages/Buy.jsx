@@ -202,30 +202,41 @@ const Buy = () => {
                   </div>
                   <div className="sm:rounded-r-md w-full border-2 sm:border-l-0 border-[#103532] sm:border-t-2 border-t-0">
                     <div className="flex items-center gap-1 h-full py-2">
-                      <div className='w-full'>
+                    <div className='w-full'>
                         <div className='border-b-2 border-[#103532] pl-2 pb-3 pt-1 w-full'>
                           <p className="font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between pr-4">
-                           <span>
-                             Digital Escrow: <span className="text-[#8FC292]">{selectedCurrency}</span></span>
-                             <span>
-                             0.00
-                             </span>
+                            <span>
+                              Gigital <span className="text-[#8FC292]"> Esccrow: </span> </span>
+                            <span>
+                              <span className="text-[#8FC292] pr-2">0.00</span>
+                              {selectedCurrency}
+                            </span>
                           </p>
 
                           <p className="mt-2.5 font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between pr-4">
-                           <span> Equity Received: <span className="text-[#8FC292]">{selectedEquity}</span></span> 
-                           <span>0.00</span>
+                            <span>
+                              Equity <span className="text-[#8FC292]">Received: </span>
+                            </span>
+                            <span>
+                              <span className="text-[#8FC292] pr-2">0.00</span>
+                              {selectedEquity}
+                            </span>
                           </p>
 
                           <p className="mt-2.5  font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between pr-4">
-                           <span> Fee Amount: <span className="text-[#8FC292]">{selectedCurrency}</span></span>
-                           <span> 0.00</span>
+                            <span>
+                              Fee Amount:
+                            </span>
+                            <span>
+                              <span className="text-[#8FC292] min-w-20 pr-2">0.00</span>
+                              {selectedCurrency}
+                            </span>
                           </p>
                         </div>
                         <div className='pl-2 pt-2'>
                           <p className="font-inter text-[14px] sm:leading-none font-semibold uppercase text-[#204E4B]  flex justify-between pr-4">
-                           <span> Total Equity Received: <span className="text-[#8FC292]">{selectedEquity}</span></span>
-                           <span> 0.00</span>
+                            <span> Total Equity Received: <span className="text-[#8FC292]">{selectedEquity}</span></span>
+                            <span> 0.00</span>
                           </p>
                         </div>
                       </div>

@@ -74,13 +74,12 @@
     border: 3px solid transparent;
     background-clip: content-box;
 }
-.account-scrollbar::-webkit-scrollbar-track {
+/* .account-scrollbar::-webkit-scrollbar-track {
     border-left: 0px !important;
- }
+ } */
 @media (max-width: 600px){
     .account-scrollbar{
         margin-right:0px;
     }
 
-   
 }

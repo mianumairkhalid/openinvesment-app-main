@@ -8,30 +8,30 @@ const TransactionHistory = () => {
   const [isShareDropdownOpen, setIsShareDropdownOpen] = useState(false)
   const sharesData = {
     OA_Tesla: {
-      totalUnits: 5.8,
-      profitLoss: "+50%",
+      totalUnits: 0,
+      profitLoss: "+0%",
       transactions: [
-        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" },
-        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" },
-        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+30%" }
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" }
       ]
     },
     OA_Apple: {
-      totalUnits: 4.5,
-      profitLoss: "+42%",
+      totalUnits: 0,
+      profitLoss: "+0%",
       transactions: [
-        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" },
-        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" },
-        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+25%" }
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" },
+        { units: 0.00, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" }
       ]
     },
     OA_Amazon: {
-      totalUnits: 6.2,
-      profitLoss: "+38%",
+      totalUnits: 0,
+      profitLoss: "+0%",
       transactions: [
-        { units: 2.1, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+18%" },
-        { units: 2.0, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+18%" },
-        { units: 2.1, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+18%" }
+        { units: 2.1, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" },
+        { units: 2.0, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" },
+        { units: 2.1, timestamp: "(D/M/Y) (TIME STAMP)", percentage: "+0%" }
       ]
     }
   }

@@ -6,9 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 #connect{
-    background: #9AB886 !important;
+    background: #146F68 !important;
     border-radius: 50px !important;
     padding: 0 !important;
+    text-transform: capitalize;
 }
 
 #connect .ik-flex{
@@ -40,7 +41,12 @@
     border: 3px solid transparent;
     background-clip: content-box;
 }
-  
+
+.guide-scrollbar a{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
 
 
 .account-scrollbar{
@@ -48,6 +54,7 @@
     overflow: auto;
     margin-right: 5px;
 }
+
 
 .account-scrollbar::-webkit-scrollbar {
     width: 20px; /* Vertical scrollbar width */
@@ -57,9 +64,7 @@
 
 .account-scrollbar::-webkit-scrollbar-track {
     background: transparent;
-    border: 1px solid #146082;
-    /* border-radius: 100px; */
-    /* border-bottom-right-radius: 12px; */
+    border: 2px solid #146082;
     margin: 0px; /* Creates spacing for border visibility */
 }
 
@@ -68,4 +73,14 @@
     border-radius: 100px;
     border: 3px solid transparent;
     background-clip: content-box;
+}
+.account-scrollbar::-webkit-scrollbar-track {
+    border-left: 0px !important;
+ }
+@media (max-width: 600px){
+    .account-scrollbar{
+        margin-right:0px;
+    }
+
+   
 }

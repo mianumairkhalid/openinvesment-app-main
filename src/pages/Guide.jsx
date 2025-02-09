@@ -38,7 +38,7 @@ const Guide = () => {
                     Listed Exchanges
                   </h3>
                 </div>
-                <div className="sm:px-10  px-5 sm:py-8 py-4 flex flex-col gap-3 rounded-xl guide-scrollbar">
+                <div className="py-5 px-4 flex flex-col gap-3 rounded-xl guide-scrollbar">
                   <a
                     href="https://app.icpswap.com/swap/pro?input=ryjl3-tyaaa-aaaaa-aaaba-cai&output=hdbec-7yaaa-aaaam-qcw5a-cai"
                     target="_blank"
@@ -120,7 +120,7 @@ const Guide = () => {
                     Listed Exchanges
                   </h3>
                 </div>
-                <div className="sm:px-10  px-5 sm:py-8 py-4 flex flex-col gap-3 rounded-xl guide-scrollbar">
+                <div className="py-5 px-4 flex flex-col gap-3 rounded-xl guide-scrollbar">
                   <a
                     href="https://dexscreener.com/icp/lcqm7-2qaaa-aaaag-qnekq-cai"
                     target="_blank"
@@ -153,7 +153,7 @@ const Guide = () => {
                     <div className="flex items-center gap-5">
                       <img className="min-w-[23%]" src={icpSwap} alt="" />
                       <h4 className="font-inter text-[18px] leading-none font-bold uppercase text-[#15413F]">
-                        ICP Swag Pro
+                        ICP Swap Pro
                       </h4>
                     </div>
                   </a>

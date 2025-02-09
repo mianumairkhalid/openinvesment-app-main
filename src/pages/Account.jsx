@@ -23,7 +23,7 @@ const Account = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="xl:px-16 sm:px-4">
+                    <div className="xl:px-16 sm:px-4 px-2">
                         <div className="flex sm:flex-row flex-col justify-between">
                             {/* Equity Section */}
                             <div className="sm:w-[50%] sm:py-10 py-5 sm:border-r-[2px] border-[#15413F]">
@@ -164,8 +164,8 @@ const Account = () => {
                             </div>
 
                             {/* Digital Section */}
-                            <div className="sm:w-[50%] sm:py-10 py-5 sm:px-5 px-2">
-                                <div className="text-[#296A5B] sm:text-lg text-sm leading-none mb-3 font-bold">
+                            <div className="sm:w-[50%] sm:py-10 py-5 sm:px-5 sm:mt-0 mt-5">
+                                <div className="text-[#296A5B] sm:text-lg text-sm leading-none mb-3 font-bold sm:px-0">
                                     Total Digital Shares Holding : $
                                     <input
                                         type="text"
@@ -194,7 +194,7 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-center ml-[27%] mt-1">
+                                <div className="text-center mt-1">
                                     <span className="font-bold text-[#528067] text-[9px] uppercase">
                                         Total USD live digital value: $
                                         <input
@@ -224,7 +224,7 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-center ml-[27%] mt-1">
+                                <div className="text-center mt-1">
                                     <span className="font-bold text-[#528067] text-[9px] uppercase">
                                         Total USD live digital value: $
                                         <input
@@ -254,7 +254,7 @@ const Account = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-center ml-[27%] mt-1">
+                                <div className="text-center mt-1">
                                     <span className="font-bold text-[#528067] text-[9px] uppercase">
                                         Total USD live digital value: $
                                         <input
@@ -268,7 +268,7 @@ const Account = () => {
 </div>
 
                                 <div className="mt-4 sm:px-5 px-2">
-                                    <button className="bg-[#31685B] text-white w-full py-3 uppercase font-inter text-lg text-center rounded-md">
+                                    <button className="bg-[#31685B] text-white w-full sm:py-3 py-2.5 uppercase font-inter sm:text-lg text-sm text-center rounded-md">
                                         View all
                                     </button>
                                 </div>

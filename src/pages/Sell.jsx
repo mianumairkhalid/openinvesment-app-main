@@ -204,24 +204,23 @@ const Sell = () => {
                       <div className='w-full'>
                         <div className='border-b-2 border-[#103532] pl-2 pb-3 pt-1 w-full'>
                           <p className="font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
-                            Equity <span className="text-[#8FC292]"> Sell : 0.00 </span> OA Tesla
+                            Equity Sell: {selectedEquity} <span className="text-[#8FC292]">0.00</span>
                           </p>
 
                           <p className="mt-2.5 font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
-                            Digital <span className="text-[#8FC292]"> Received : 0.00 </span> Open APP
+                            Digital Received: {selectedCurrency} <span className="text-[#8FC292]">0.00</span>
                           </p>
 
                           <p className="mt-2.5  font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B]">
-                            Fee Amount <span className="text-[#8FC292]"> : 0.00 </span> Open APP
+                            Fee Amount: {selectedCurrency} <span className="text-[#8FC292]">0.00</span>
                           </p>
                         </div>
                         <div className='pl-2 pt-2'>
                           <p className="font-inter text-[14px] sm:leading-none font-semibold uppercase text-[#204E4B]">
-                            Total Digital Received <span className="text-[#8FC292]"> : 0.00 </span> OA Tesla
+                            Total Digital Received: {selectedCurrency} <span className="text-[#8FC292]">0.00</span>
                           </p>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>

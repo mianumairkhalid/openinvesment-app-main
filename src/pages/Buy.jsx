@@ -206,7 +206,7 @@ const Buy = () => {
                         <div className='border-b-2 border-[#103532] pl-2 pb-3 pt-1 w-full'>
                           <p className="font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between pr-4">
                             <span>
-                              Gigital <span className="text-[#8FC292]"> Esccrow: </span> </span>
+                              Digital <span className="text-[#8FC292]"> Esccrow: </span> </span>
                             <span>
                               <span className="text-[#8FC292] pr-2">0.00</span>
                               {selectedCurrency}

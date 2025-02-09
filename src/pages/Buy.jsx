@@ -204,7 +204,7 @@ const Buy = () => {
                     <div className="flex items-center gap-1 h-full py-2">
                       <div className='w-full'>
                         <div className='border-b-2 border-[#103532] pl-2 pb-3 pt-1 w-full'>
-                          <p className="font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between pr-4">
+                          <p className="font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between">
                             <span>
                               Digital <span className="text-[#8FC292]"> Esccrow: </span> </span>
                             <span className='flex justify-between'>
@@ -213,7 +213,7 @@ const Buy = () => {
                             </span>
                           </p>
 
-                          <p className="mt-2.5 font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between pr-4">
+                          <p className="mt-2.5 font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between">
                             <span>
                               Equity <span className="text-[#8FC292]">Received: </span>
                             </span>
@@ -223,7 +223,7 @@ const Buy = () => {
                             </span>
                           </p>
 
-                          <p className="mt-2.5  font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between pr-4">
+                          <p className="mt-2.5  font-inter text-[14px] leading-none font-semibold uppercase text-[#204E4B] flex justify-between">
                             <span>
                               Fee Amount:
                             </span>
@@ -234,7 +234,7 @@ const Buy = () => {
                           </p>
                         </div>
                         <div className='pl-2 pt-2'>
-                          <p className="font-inter text-[14px] sm:leading-none font-semibold uppercase text-[#204E4B]  flex justify-between pr-4">
+                          <p className="font-inter text-[14px] sm:leading-none font-semibold uppercase text-[#204E4B]  flex justify-between">
                             <span> Total Equity Received: </span>
                             <span className='flex justify-between'>
                               <span className="text-[#8FC292] pr-2">
